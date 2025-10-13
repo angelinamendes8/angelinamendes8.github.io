@@ -1,0 +1,68 @@
+main {
+		margin: 0;
+		padding: 30px;
+	}
+	article {
+		padding: 50px;
+		margin-bottom: 25px;
+		border-radius: 25px;
+	}
+	footer {
+		margin: 0;
+		padding: 30px;
+	}
+	.grid-section {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap; 
+        }
+    .grid-section article {
+            flex: 1 1 45%; 
+            margin: 0;
+        }
+	.tulip-mybutton-label {
+		display: block; 
+        padding: 15px 25px; 
+        border-radius: 10px; 
+		width: 80%; 
+        margin: 20px auto;
+		cursor: pointer; 
+	}
+	.plumeria-mybutton-label {
+		display: block; 
+        padding: 15px 25px; 
+        border-radius: 10px; 
+		width: 80%; 
+        margin: 20px auto;
+		cursor: pointer; 
+	}
+	table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 90%;
+        }
+        th, td {
+            padding: 10px;
+        }
+	.hidden-content {
+		display: none;
+	}
+	#tulip-mybutton {
+    display: none;
+	}
+	#tulip-mybutton:checked ~ #tulip-pricelist {
+    display: block;
+	}
+	#plumeria-mybutton {
+	display: none
+	}
+	#plumeria-mybutton:checked ~ #plumeria-pricelist {
+    display: block;
+	} 
+	#bg-image {
+		background-size: cover;
+		background-position: center;
+		border-radius: 20px;
+		padding: 60px 40px
+	}

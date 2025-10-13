@@ -1,0 +1,56 @@
+main {
+		font-family:'Verdana';
+		background-color: #FADADD;
+	}
+	h1 {
+		text-align:left;
+		color: #FF00FF;
+	}
+	h2, h3 {
+		text-align:center;
+		color: #FF00FF;
+	}
+
+	article {
+		background-color: white;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+	}
+	footer {
+		background-color: lightcyan;
+		font-family: 'Verdana';
+	}
+	.tulip-mybutton-label {
+        text-decoration: none; 
+        text-align: center;
+        background-color: purple; 
+        color: white; 
+        font-weight: bold;
+        font-size: 1.1em;
+	}
+	.plumeria-mybutton-label { 
+        text-decoration: none; 
+        text-align: center; 
+        background-color: yellowgreen; 
+        color: white;  
+        font-weight: bold;
+        font-size: 1.1em; 
+	}
+        th, td {
+            text-align: center;
+        }
+        th {
+            background-color: lightpink;
+            color: whitesmoke;
+        }
+		#bg-image {
+		background-image: linear-gradient(rgba(255, 255, 255, 0.5), 
+		rgba(255, 255, 255, 0.5)),
+		url(6298406176667930153.jpg);
+		background-color: transparent;
+		}
+		#bg-image h1, 
+		#bg-image p {
+		font-family: 'Verdana';
+		color: white;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+		}
