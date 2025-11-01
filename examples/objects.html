@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Objects</title>
+</head>
+<body>
+    <script>
+        // Object declaration
+        const student = {
+            id: 1234,
+            name: "Joseph Calleja",
+            age: 25,
+            grade: 76.89
+        }
+
+        console.log(student.name);
+        console.log(student["grade"]);
+
+        console.log(student);
+
+        // Adding a new key-value pair
+        student.yearLevel = 4;
+        console.log(student);
+        
+        // Delete a key-value pair
+        delete student.yearLevel;
+        console.log(student);
+
+        // Looping through all key-value pairs (elements/members)
+        for(let key in student){
+            console.log(key + " : " + student[key]);
+        }
+    </script>
+</body>
+</html>

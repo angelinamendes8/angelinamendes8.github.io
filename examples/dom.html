@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulating DOM</title>
+
+    <style>
+        .company{
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="company">Aling Nena's Silogan</h1>
+    </header>
+    <main>
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam sunt ipsa nisi ab odio iusto, consectetur perferendis beatae dolores. Ullam sed quisquam nulla aperiam laudantium repudiandae explicabo ipsum assumenda minus?</p>
+        </div>
+        <div>
+            <p class="content"></p>
+        </div>
+
+        <button type="button" id="action">Click Me!</button>
+    </main>
+    <script>
+        let company = document.querySelector(".company");
+
+        company.addEventListener('mouseover', () => {
+            company.style.color = "#D62904";
+            company.style.fontSize = "48px";
+        });
+
+        company.addEventListener('mouseout', () => {
+            company.style.color = "#000000";
+            company.style.fontSize = "32px";
+        });
+
+        // Select the button
+        let btn = document.getElementById('action');
+        // Set an event listner to the button
+        btn.addEventListener('click', () => {
+            // Select the p.content element
+            let content = document.querySelector('.content');
+            // content.textContent = "Hello DOM!!!!";
+            content.innerHTML = "<strong>Hello DOM!!!!</strong>";
+        });
+        
+    </script>
+</body>
+</html>
