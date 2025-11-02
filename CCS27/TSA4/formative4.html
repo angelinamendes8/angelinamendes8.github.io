@@ -3,40 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign Up Form </title>
 </head>
 <body>
+    <Style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        section {
+            background-color: lightgreen;
+        }
+     
+        table {
+            text-align: center;
+            border-spacing: 10px 5px;
+            border-collapse: separate;
+            width: 50%;
+            margin: 20px auto;
+        }
+
+        table th, table td {
+            border-bottom: 1px solid lightslategray;
+            padding: 8px;
+        }
+
+        h2:first-of-type {
+            margin-top: 30px;
+        }
+
+        #dataform {
+            width: 700px;
+            margin: 30px auto 10px auto;
+            padding:20px;
+            border: 1px solid black;
+        }
+
+        #dataform label {
+            display: block;
+            text-align: left;
+            margin-bottom: 3px;
+        }
+
+        #dataform input {
+            width: 100%;
+            box-sizing: border-box;
+            border: 2px solid green
+        }
+        
+        #secondrow, #thirdrow {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        #firstrow > div {
+            width: 100px;
+        }"
+
+        #secondrow > div {
+            width: 33px;
+            padding-right: 15px;
+        }"
+
+        #thirdrow > div {
+            width: 50px;
+            padding-right: 15px;
+        }
+
+        #secondrow > div, #thirdrow > div {
+            flex-grow: 1;
+            padding-right: 15px;
+        }
+
+        #firstrow, #secondrow, #thirdrow {
+            display: flex;
+            margin-bottom: 20px;
+            justify-content: space-between;
+        }
+
+        #IDnum {
+            width: 300px;
+        }
+
+        #Fname, #Mname, #Lname {
+            width: 150x;
+            margin-right: 5px;
+        }
+
+        #Gender, #Bday {
+            width: 100px;
+            margin-right: 30px;
+        }
+
+#Dataform button
+
+    </Style>
+    <section>
     <h2> Sign Up Form</h2>
     <form action="" id="dataform">
-        <div>
+        <div id="firstrow">
+            <div>
             <label for="IDnum"> ID Number:</label>
             <input type="text" name="IDnum" id="IDnum">
+            </div>
         </div>
-        <div>
+
+        <div id="secondrow">
+            <div>
             <label for="Fname"> First Name:</label>
             <input type="text" name="Fname" id="Fname">
-        </div>
-        <div>
+            </div>
+            <div>
             <label for="Mname"> Middle Name:</label>
             <input type="text" name="Mname" id="Mname">
-        </div>
-        <div>
+            </div>
+            <div>
             <label for="Lname"> Last Name: </label>
             <input type="text" name="Lname" id="Lname">
+            </div>
         </div>
-        <div>
+
+        <div id="thirdrow">
+            <div>
             <label for="Gender"> Gender:</label>
             <input type="text" name="Gender" id="Gender">
-        </div>
-        <div>
+            </div>  
+            <div>
             <label for="Bday"> Birthday:</label>
             <input type="date" name="Bday" id="Bday">
+            </div>
         </div>
+
         <button type="button" id="save">Save Data</button>
         <button type="button" id="clear">Clear All Data</button>
 
     </form>
-
+    </section>
+    
     <h2>Saved Data</h2>
     <table>
     <thead>
@@ -55,5 +163,5 @@
     </table>
     
     <script src="script1.js"></script>
-    </body>
+</body>
 </html>
