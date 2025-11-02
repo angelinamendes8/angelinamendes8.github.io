@@ -7,8 +7,6 @@ const Lname = document.getElementById('Lname').value;
 const Gender = document.getElementById('Gender').value;
 const Bday = document.getElementById('Bday').value;
 
-const save = document.getElementById('save');
-
 const tablebody = document.getElementByID('datatable');
 
 const newRow = tablebody.insertRow();
@@ -27,7 +25,7 @@ LnameCell.textContent = Lname;
 GenderCell.textContent = Gender;
 BdayCell.dateContent = Bday;
 
-document.getElementById('dataform').requestFullscreen();
+document.getElementById('dataform').reset();
 
 })
 
