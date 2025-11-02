@@ -1,5 +1,6 @@
-document.getElementById('dataform').addEventListener('save', function(event) {
-event.preventDefault;
+document.getElementById('datatable');
+document.getElementById('save').addEventListener('click', function(event) {
+event.preventDefault();
 
 const IDnum = document.getElementById('IDnum').value;
 const Fname = document.getElementById('Fname').value;
