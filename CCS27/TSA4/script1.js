@@ -1,4 +1,3 @@
-document.getElementById('datatable');
 document.getElementById('save').addEventListener('click', function(event) {
 event.preventDefault();
 
@@ -9,7 +8,7 @@ const Lname = document.getElementById('Lname').value;
 const Gender = document.getElementById('Gender').value;
 const Bday = document.getElementById('Bday').value;
 
-const tablebody = document.getElementByID('datatable');
+const tablebody = document.getElementById('datatable');
 
 const newRow = tablebody.insertRow();
 
@@ -25,7 +24,7 @@ FnameCell.textContent = Fname;
 MnameCell.textContent = Mname;
 LnameCell.textContent = Lname;
 GenderCell.textContent = Gender;
-BdayCell.dateContent = Bday;
+BdayCell.textContent = Bday;
 
 document.getElementById('dataform').reset();
 
