@@ -1,11 +1,11 @@
 document.getElementById('dataform').addEventListener('save', function(event) {
 
-const IDnum = document.getElementById('IDnum');
-const Fname = document.getElementById('Fname');
-const Mname = document.getElementById('Mname');
-const Lname = document.getElementById('Lname');
-const Gender = document.getElementById('Gender')
-const Bday = document.getElementById('Bday')
+const IDnum = document.getElementById('IDnum').value;
+const Fname = document.getElementById('Fname').value;
+const Mname = document.getElementById('Mname').value;
+const Lname = document.getElementById('Lname').value;
+const Gender = document.getElementById('Gender').value;
+const Bday = document.getElementById('Bday').value;
 
 const save = document.getElementById('save');
 
