@@ -38,10 +38,10 @@
         }
 
         #dataform {
-            width: 700px;
+            width: 600px;
             margin: 30px auto 10px auto;
             padding:20px;
-            border: 1px solid black;
+            border: 1px solid lightgreen;
         }
 
         #dataform label {
@@ -55,53 +55,46 @@
             box-sizing: border-box;
             border: 2px solid green
         }
-        
-        #secondrow, #thirdrow {
-            display: flex;
-            justify-content: flex-start;
-        }
 
         #firstrow > div {
-            width: 100px;
-        }"
-
-        #secondrow > div {
-            width: 33px;
-            padding-right: 15px;
-        }"
-
-        #thirdrow > div {
-            width: 50px;
+            width: 600px;
             padding-right: 15px;
         }
 
-        #secondrow > div, #thirdrow > div {
+        #secondrow > div {
             flex-grow: 1;
             padding-right: 15px;
         }
 
+        #thirdrow > div:first-child {
+            width: 200px;
+            flex-grow: 0;
+            padding-right: 100px;
+        }
+
+        #thirdrow > div:last-child {
+            width: 100px;
+            flex-grow: 1;
+            padding-right: 15px;
+        }
+
+
         #firstrow, #secondrow, #thirdrow {
             display: flex;
             margin-bottom: 20px;
-            justify-content: space-between;
         }
 
         #IDnum {
-            width: 300px;
+            width: 100%;
         }
 
-        #Fname, #Mname, #Lname {
-            width: 150x;
-            margin-right: 5px;
+         #dataform button {
+            margin: 15px 10px 15px 0;
+            padding: 10px 20px;
+            border: none;
+            background-color: fuchsia;
+            color: white;
         }
-
-        #Gender, #Bday {
-            width: 100px;
-            margin-right: 30px;
-        }
-
-#Dataform button
-
     </Style>
     <section>
     <h2> Sign Up Form</h2>

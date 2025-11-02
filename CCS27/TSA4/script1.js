@@ -30,6 +30,35 @@ document.getElementById('dataform').reset();
 
 })
 
+const savebutton = document.getElementById('save');
+
+savebutton.addEventListener('mouseover', () => {
+    savebutton.style.padding = '25px 40px';
+    savebutton.style.backgroundColor = '#ffff00';
+    savebutton.style.color = 'black';
+})
+
+savebutton.addEventListener('mouseout', () => {
+    savebutton.style.padding = '10px 20px';
+    savebutton.style.backgroundColor = '#ff00ff';
+    savebutton.style.color = 'white';
+})
+
+const clearbutton = document.getElementById('clear');
+
+clearbutton.addEventListener('mouseover', () => {
+    clearbutton.style.padding = '25px 40px';
+    clearbutton.style.backgroundColor = '#ff7900';
+    clearbutton.style.color = 'black';
+})
+
+clearbutton.addEventListener('mouseout', () => {
+    clearbutton.style.padding = '10px 20px';
+    clearbutton.style.backgroundColor = '#ff00ff';
+    clearbutton.style.color = 'white';
+})
+
+
 document.getElementById('clear').addEventListener('click', function(event){
     event.preventDefault();
     document.getElementById('dataform').reset();
