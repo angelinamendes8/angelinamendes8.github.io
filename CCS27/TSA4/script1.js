@@ -1,4 +1,5 @@
 document.getElementById('dataform').addEventListener('save', function(event) {
+event.preventDefault;
 
 const IDnum = document.getElementById('IDnum').value;
 const Fname = document.getElementById('Fname').value;
