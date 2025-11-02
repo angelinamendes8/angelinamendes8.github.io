@@ -28,10 +28,9 @@ BdayCell.textContent = Bday;
 
 document.getElementById('dataform').reset();
 
+})
+
 document.getElementById('clear').addEventListener('click', function(event){
     event.preventDefault();
     document.getElementById('dataform').reset();
 })
-
-})
-
