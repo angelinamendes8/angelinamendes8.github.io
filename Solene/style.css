@@ -44,12 +44,21 @@ nav ul {
 }
 
 nav a {
+    padding: 20px 10px ;
+    background-color: #F8EFE5;
+    border-color: #C8B39B ;
+    border-radius:25px;
+    border: 2px solid;
+    transition: 0.7s ease;
     text-decoration: none;
-    color: white;
+    font-size: 32px;
+    color: #C8B39B;
+    coursor: pointer;
 }
 
 nav a:hover {
-    color: #E3C9A4;
+    background-color: transparent;
+    color: #C8B39B;
 }
 
 
