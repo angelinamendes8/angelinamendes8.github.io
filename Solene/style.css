@@ -54,13 +54,13 @@ nav ul {
 
 nav a {
     display: block;
-    padding: 3px 8px;
-    font-size: 1em;
+    padding: 2px 8px;
+    font-size: 0.9em;
     text-decoration: none;
     cursor: pointer;
     color: #1D375B;
     background-color: #C8B39B;
-    border-radius: 15px;
+    border-radius: 12px;
     border: 2px solid #C8B39B;
     transition: background-color 0.3s ease, 
                         color 0.3s ease, 
