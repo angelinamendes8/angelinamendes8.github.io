@@ -17,6 +17,12 @@ header {
     height: 250px;
 }
 
+header h1 {
+    margin: 10px 0 5px 0;
+    font-size: 2.5em;
+    color: inherit;
+}
+
 
 .logo img {
     display:block;
