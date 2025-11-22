@@ -5,7 +5,7 @@ body {
     color: #333;
 }
 
-/* start - gel*/
+
 header.logo {
     background-color: #1D375B;
     display: flex;
@@ -25,7 +25,7 @@ header.logo {
     max-width: 100%;
     margin: 0 auto
 }
-/* end - gel*/
+
 
 nav ul {
     list-style: none;
