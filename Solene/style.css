@@ -13,11 +13,11 @@ header {
     align-items: center;
     justify-content: center;
     color: #C8B39B;
-    height: 12vh;
-    padding: 0;
+    height: auto;
+    padding: 20px 0;
     width: 100%;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: visible;
 }
 
 header h1 {
