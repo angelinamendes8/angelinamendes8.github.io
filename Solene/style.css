@@ -27,7 +27,7 @@ header h1 {
     margin-bottom: 10px;
 }
 
-.logo img {
+#solenelogo {
     display:block;
     width:60px;
     height:auto;
