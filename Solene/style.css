@@ -1,21 +1,18 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #1D375B;
+    background-color: #F8EFE5;
     color: #333;
 }
 
 
-header.logo {
-    background-color: #1D375B;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #C8B39B;
-    padding: 50px;
-    height: 250px;
+
+header {
+    background-color: #5D768B;
+    color: white;
+    padding: 20px;
 }
+
 
 
 .logo img {
