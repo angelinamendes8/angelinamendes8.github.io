@@ -73,13 +73,14 @@ nav a:hover {
     border-color: #C8B39B;
 }
 
-.intro {
+.content {
     background-color: #F2D9C7;
     padding: 40px;
     text-align: center;
+    height: 60vh;
 }
 
-.intro h2 {
+.content h2 {
     margin-top: 0;
 }
 
@@ -162,4 +163,5 @@ footer {
     text-align: center;
     padding: 15px;
     margin-top: 40px;
+    height: 20vh;
 }
