@@ -74,21 +74,6 @@ nav a:hover {
     border-color: #C8B39B;
 }
 
-
-
-.banner {
-    background-color: #C8B39B;
-    padding: 60px;
-    text-align: center;
-    color: white;
-}
-
-.banner h2 {
-    margin: 0;
-}
-
-
-
 .intro {
     background-color: #F2D9C7;
     padding: 40px;
