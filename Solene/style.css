@@ -13,7 +13,8 @@ header {
     align-items: center;
     justify-content: center;
     color: #C8B39B;
-    height: 30vh;
+    width: 50vw
+    height: 50vh;
     padding: 30px 0;
     width: 100%;
     box-sizing: border-box;
