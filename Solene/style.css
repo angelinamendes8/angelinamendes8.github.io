@@ -14,6 +14,7 @@ header {
     background-attachment: scroll;
     background-position: center center;
     align-content: center;
+    text-align: center;
     color: #C8B39B;
     padding: 50px;
 }
