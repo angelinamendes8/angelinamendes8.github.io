@@ -1,17 +1,10 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #1D375B;
+    background-color: #F8EFE5;
     color: #333;
 }
 
-/*start - gel: start remove*/
- background-image: url ('background.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center;
-/*end - gel: end remove*/
 
 header {
     background-color: #1D375B;
