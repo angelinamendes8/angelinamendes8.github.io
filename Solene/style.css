@@ -13,7 +13,8 @@ header {
     align-items: center;
     justify-content: center;
     color: #C8B39B;
-    padding: 15px 0;
+    padding: 0;
+    height: 15vh
 }
 
 header h1 {
@@ -27,7 +28,7 @@ header h1 {
 
 .logo img {
     display:block;
-    width:150px;
+    width:10px;
     height:auto;
     max-width: 100%;
     margin: 0 auto
