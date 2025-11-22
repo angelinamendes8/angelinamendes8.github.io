@@ -5,21 +5,23 @@ body {
     color: #333;
 }
 
-
-
-header {
-    background-image: url ('background.png');
+/*start - gel: start remove*/
+ background-image: url ('background.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: scroll;
-    background-position: center center;
-     display: flex;
+    background-position: center;
+/*end - gel: end remove*/
+
+header {
+    background-color: #1D375B;
+    display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-content: center;
-    text-align: center;
     color: #C8B39B;
     padding: 50px;
+    height: 250px;
 }
 
 header .logo h1,
