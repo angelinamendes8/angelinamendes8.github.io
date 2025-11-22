@@ -23,9 +23,10 @@ header .logo p {
     font-size: 14px;
 }
 
-solenelogo.jpg {
+.logo img {
+    align-items: center;
     width:400px;
-    height:300px"
+    height:300px;
 }
 
 nav ul {
