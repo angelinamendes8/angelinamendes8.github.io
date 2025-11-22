@@ -8,8 +8,8 @@ body {
 
 
 header {
-    background-color: #5D768B;
-    color: white;
+    background-color: #1D375B;
+    color: #C8B39B;
     padding: 20px;
 }
 
@@ -21,6 +21,11 @@ header h1 {
 header .logo p {
     margin: 5px 0 0 0;
     font-size: 14px;
+}
+
+solenelogo.jpg {
+    width:400px;
+    height:300px"
 }
 
 nav ul {
