@@ -5,7 +5,7 @@ body {
     color: #333;
 }
 
-
+/* start - gel*/
 header.logo {
     background-color: #1D375B;
     display: flex;
@@ -17,9 +17,10 @@ header.logo {
     height: 250px;
 }
 
+,logo {
+    background-color: tranpsarent; 
+}
 
-
-/* start - gel: whole .logo img block*/
 .logo img {
     display:block;
     width:50px;
