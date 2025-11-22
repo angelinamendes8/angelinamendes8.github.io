@@ -6,7 +6,7 @@ body {
 }
 
 
-header.logo {
+header {
     background-color: #1D375B;
     display: flex;
     flex-direction: column;
