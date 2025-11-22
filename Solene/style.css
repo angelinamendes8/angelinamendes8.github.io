@@ -45,15 +45,16 @@ nav ul {
 
 nav a {
     padding: 20px 10px ;
-    background-color: #F8EFE5;
-    border-color: #C8B39B ;
-    border-radius:25px;
-    border: 2px solid;
-    transition: 0.7s ease;
+    color: #000000;
+    font-size: 25px;
+    background-color: #1D375B;
+    border-radius: 25px;
     text-decoration: none;
-    font-size: 32px;
-    color: #C8B39B;
-    coursor: pointer;
+    transition-duration: 0.7s ease;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 2px solid #1D375B;
+    cursor: pointer;
 }
 
 nav a:hover {
