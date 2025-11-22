@@ -39,7 +39,7 @@ header h1 {
 
 #solenelogo {
     display:block;
-    width:60px;
+    width:200px;
     height:auto;
     max-width: 100%;
     margin: 0;
@@ -81,7 +81,7 @@ nav a:hover {
     background-color: #F2D9C7;
     padding: 40px;
     text-align: center;
-    height: auto;
+    height: 60vh;
     width: 100%;
 }
 
