@@ -13,7 +13,7 @@ header {
     align-items: center;
     justify-content: center;
     color: #C8B39B;
-    height: 20vh;
+    height: 30vh;
     padding: 20px 0;
     width: 100%;
     box-sizing: border-box;
@@ -77,7 +77,8 @@ nav a:hover {
     background-color: #F2D9C7;
     padding: 40px;
     text-align: center;
-    height: 65vh;
+    height: 60vh;
+    width: 100%;
 }
 
 .content h2 {
@@ -163,5 +164,5 @@ footer {
     text-align: center;
     padding: 15px;
     margin-top: 20px;
-    height: 15vh;
+    height: 10vh;
 }
