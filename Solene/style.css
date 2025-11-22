@@ -14,7 +14,7 @@ header {
     justify-content: center;
     color: #C8B39B;
     height: auto;
-    padding: 20px 0;
+    padding: 30px 0;
     width: 100%;
     box-sizing: border-box;
     overflow: visible;
@@ -23,19 +23,19 @@ header {
 header h1 {
    color: #C8B39B;
    text-align: center;
-   margin: 5px 15px;
+   margin: 5px 15px 5px 15px;
    text-align: center;
    font-size: 1.2em;
    max-width: 90%;
 }
 
 .logo {
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 
 #solenelogo {
     display:block;
-    width:55px;
+    width:100px;
     height:auto;
     max-width: 100%;
     margin: 0 auto
@@ -45,7 +45,7 @@ header h1 {
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 5px 0 0 0; 
+    margin: 10px 0 0 0; 
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
