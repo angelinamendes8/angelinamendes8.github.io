@@ -17,9 +17,6 @@ header.logo {
     height: 250px;
 }
 
-.logo {
-    background-color: transparent; 
-}
 
 .logo img {
     display:block;
