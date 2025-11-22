@@ -58,11 +58,13 @@ nav a {
     font-size: 1em;
     text-decoration: none;
     cursor: pointer;
-    color: blue;
+    color: #1D375B;
     background-color: #C8B39B;
     border-radius: 15px;
     border: 2px solid #C8B39B;
-    transition: all 0.7s ease;
+    transition: background-color 0.3s ease, 
+                        color 0.3s ease, 
+                        border-color 0.3s ease;
 }
 
 nav a:hover {
