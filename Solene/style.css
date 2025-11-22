@@ -14,21 +14,22 @@ header {
     justify-content: center;
     color: #C8B39B;
     padding: 0;
-    height: 10vh
 }
 
 header h1 {
    color: #C8B39B;
    text-align: center;
+   margin: 10px 0 20px 0;
+   text-align: center;
 }
 
 .logo {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .logo img {
     display:block;
-    width:10px;
+    width:60px;
     height:auto;
     max-width: 100%;
     margin: 0 auto
@@ -41,20 +42,23 @@ nav ul {
     margin-top: 10px;
     display: flex;
     gap: 15px;
+    margin-bottom: 0;
 }
 
 nav a {
+    color: #C8B39B;
     padding: 20px 10px ;
-    color: #000000;
-    font-size: 25px;
-    background-color: #1D375B;
-    border-radius: 25px;
+    font-size: 1.1em;
     text-decoration: none;
+    cursor: pointer;
+    
+    border-radius: 25px;
+    
     transition-duration: 0.7s ease;
     margin-top: 30px;
     margin-bottom: 30px;
     border: 2px solid #1D375B;
-    cursor: pointer;
+    
 }
 
 nav a:hover {
