@@ -9,12 +9,12 @@ body {
 header {
     background-color: #1D375B;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     color: #C8B39B;
     height: 30vh;
-    padding: 20px 0;
+    padding: 0 5%;
     width: 100%;
     box-sizing: border-box;
     overflow: visible;
@@ -22,34 +22,38 @@ header {
 
 header h1 {
    color: #C8B39B;
-   text-align: center;
-   margin: 5px 15px 5px 15px;
-   text-align: center;
+   margin: 0;
+   text-align: right;
    font-size: 1.2em;
-   max-width: 90%;
+   max-width: none;
 }
 
 .logo {
     margin-bottom: 2px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+    margin: 0;
 }
 
 #solenelogo {
     display:block;
-    width:200px;
+    width:60px;
     height:auto;
     max-width: 100%;
-    margin: 0 auto
+    margin: 0;
 }
 
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 20px 0 0 0; 
+    margin: 0; 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
 }
 
 nav a {
@@ -77,7 +81,7 @@ nav a:hover {
     background-color: #F2D9C7;
     padding: 40px;
     text-align: center;
-    height: 60vh;
+    height: auto;
     width: 100%;
 }
 
