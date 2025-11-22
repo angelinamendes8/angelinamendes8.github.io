@@ -17,16 +17,7 @@ header {
     height: 250px;
 }
 
-header .logo h1,
-header h1 {
-    margin: 0;
-}
 
-
-header .logo p {
-    margin: 5px 0 0 0;
-    font-size: 14px;
-}
 
 /* start - gel: whole .logo img block*/
 .logo img {
