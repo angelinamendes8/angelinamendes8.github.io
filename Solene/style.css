@@ -13,6 +13,9 @@ header {
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-content: center;
     text-align: center;
     color: #C8B39B;
