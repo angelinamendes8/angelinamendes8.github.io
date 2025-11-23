@@ -145,7 +145,7 @@ nav a:hover {
 }
 ::-webkit-scrollbar-thumb {
     background-color: #1D375B;
-    border-radius: px;
+    border-radius:10px;
 }
 ::-webkit-scrollbar-track {
     background: #e5e7eb;
