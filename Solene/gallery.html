@@ -189,6 +189,38 @@
                 </div>
             </div>
     </div>
+</section>
+
+   <div id="enquire-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Enquiry Submitted</h3>
+                <button onclick="closeModal()" class="close-btn">
+                    <!-- Icon for closing -->
+                    <svg class="w-6 h-6" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            
+            <div style="text-align: center; padding: 1rem 0;">
+                <div class="confirmation-icon">
+                    &#10003; <!-- Checkmark symbol -->
+                </div>
+                <p class="modal-text">
+                    We have registered your interest in: <br>
+                    <strong id="modal-artwork-title"></strong>.
+                </p>
+                <p style="font-size: 1rem; font-weight: 500; color: #4b5563; margin-bottom: 1.5rem;">
+                    A gallery representative will contact you soon.
+                </p>
+            </div>
+            
+            <div class="modal-footer">
+                <p>
+                    This message will close automatically after 10 seconds.
+                </p>
+            </div>
+        </div>
+    </div>
 
 <script src="gallery.js"></script>
 </body>

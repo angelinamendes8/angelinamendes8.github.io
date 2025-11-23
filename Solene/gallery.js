@@ -1,3 +1,8 @@
+    // Store the timeout ID so we can clear it if the user closes manually
+        let autoCloseTimeout; 
+        const MODAL_DURATION_MS = 10000; // 10 seconds
+
+    
     function handleEnquire(event, title) {
             // Prevent the click event from triggering the parent card's click handler
             event.stopPropagation(); 

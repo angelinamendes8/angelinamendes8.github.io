@@ -140,213 +140,54 @@ nav a:hover {
 }
 
 /*carousel - gel*/
-    :root {
-            --dark-blue: #1D375B;
-            --tan-beige: #C8B39B;
-            --light-grey: #f8f8f8;
-            --shadow-light: rgba(0, 0, 0, 0.1);
-            --shadow-heavy: rgba(0, 0, 0, 0.25);
+::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #8b5cf6; /* Purple/Violet */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e5e7eb;
         }
 
-        /* Global Styles */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--light-grey);
-            color: var(--dark-blue);
-            margin: 0;
-            padding: 20px;
-        }
-
-        /* Section Container */
         .gallery-section {
-            max-width: 1280px; /* Equivalent to max-w-7xl */
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 48px 0; /* Equivalent to py-12 */
+            padding: 2rem 1rem;
         }
 
-        /* Title */
-        .gallery-section h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem; /* Equivalent to text-5xl */
-            font-weight: 700; /* Equivalent to font-bold */
-            text-align: center;
-            margin-bottom: 48px; /* Equivalent to mb-12 */
-            color: var(--dark-blue);
-        }
-
-        /* Artwork Grid */
         .artworks-grid {
+            /* Responsive Grid setup */
             display: grid;
-            gap: 32px; /* Equivalent to gap-8 */
-            grid-template-columns: repeat(1, minmax(0, 1fr)); /* Default 1 column */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
         
-        /* Responsive Grid Adjustments */
-        @media (min-width: 640px) { /* sm breakpoint */
-            .artworks-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-        @media (min-width: 1024px) { /* lg breakpoint */
-            .artworks-grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-        }
-        @media (min-width: 1280px) { /* xl breakpoint */
-            .artworks-grid {
-                grid-template-columns: repeat(4, minmax(0, 1fr));
-            }
-        }
-
-        /* Artwork Card */
         .artwork-card {
-            background-color: white;
-            border-radius: 0.75rem; /* Equivalent to rounded-xl */
-            box-shadow: 0 4px 6px -1px var(--shadow-light), 0 2px 4px -2px var(--shadow-light); /* Equivalent to shadow-lg */
-            transition: all 0.3s ease; /* Equivalent to transition-all duration-300 */
-            overflow: hidden;
+            transition: all 0.3s ease;
             cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         .artwork-card:hover {
-            box-shadow: 0 20px 25px -5px var(--shadow-heavy), 0 10px 10px -5px var(--shadow-heavy); /* Equivalent to hover:shadow-2xl */
-            transform: translateY(-4px); /* Equivalent to hover:-translate-y-1 */
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
-        /* Image Styling */
-        .artwork-card img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-top-left-radius: 0.75rem;
-            border-top-right-radius: 0.75rem;
-            aspect-ratio: 3 / 2; /* 600x400 placeholder */
-        }
-
-        /* Card Content */
-        .card-content {
-            padding: 16px; /* Equivalent to p-4 */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: auto;
-        }
-
-        .card-content h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem; /* Equivalent to text-xl */
-            font-weight: 600; /* Equivalent to font-semibold */
-            margin-top: 0;
-            margin-bottom: 4px; /* Equivalent to mb-1 */
-            color: var(--dark-blue);
-        }
-
-        .card-content .artist {
-            font-size: 0.875rem; /* Equivalent to text-sm */
-            font-style: italic;
-            color: #4b5563; /* Gray-600 equivalent */
-            margin-bottom: 8px; /* Equivalent to mb-2 */
-        }
-
-        .card-content .description {
-            font-size: 0.75rem; /* Equivalent to text-xs */
-            color: #6b7280; /* Gray-500 equivalent */
-            margin-bottom: 16px; /* Equivalent to mb-4 */
-            /* Custom line clamp emulation for text truncation */
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        /* Footer/Action Row */
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 8px; /* Equivalent to pt-2 */
-            border-top: 1px solid #f3f4f6; /* Gray-100 equivalent */
-        }
-
-        .card-footer .price {
-            font-size: 1.125rem; /* Equivalent to text-lg */
-            font-weight: 700; /* Equivalent to font-bold */
-            color: var(--tan-beige);
-        }
-
-        /* Button Styling */
-        .enquire-btn {
-            background-color: var(--dark-blue);
-            color: var(--tan-beige);
-            font-size: 0.875rem; /* Equivalent to text-sm */
-            font-weight: 600; /* Equivalent to font-semibold */
-            padding: 8px 16px; /* Equivalent to px-4 py-2 */
-            border-radius: 8px; /* Equivalent to rounded-lg */
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-md */
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.15s ease;
-        }
-
-        .enquire-btn:hover {
-            background-color: #102d4f; /* Slightly darker blue */
-        }
-
-        /* --- MODAL STYLING (Message Box) --- */
+        /* Specific styles for the modal overlay and content */
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: none; /* Hidden by default */
-            align-items: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: none; /* Initially hidden */
             justify-content: center;
+            align-items: center;
             z-index: 1000;
-        }
-
-        .modal-box {
-            background-color: white;
-            padding: 40px;
-            border-radius: 12px;
-            max-width: 384px; /* Equivalent to max-w-sm */
-            width: 100%;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); /* Equivalent to shadow-2xl */
-            text-align: center;
-        }
-
-        .modal-box h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem; /* Equivalent to text-2xl */
-            font-weight: 700;
-            margin-top: 0;
-            margin-bottom: 16px; /* Equivalent to mb-4 */
-            color: var(--dark-blue);
-        }
-
-        .modal-box p {
-            color: #374151; /* Gray-700 equivalent */
-            margin-bottom: 24px; /* Equivalent to mb-6 */
-        }
-
-        .modal-box .highlight {
-            font-weight: 600;
-            color: var(--tan-beige);
-        }
-        
-        .modal-close-btn {
-            background-color: var(--dark-blue);
-            color: var(--tan-beige);
-            font-weight: 600;
-            padding: 8px 24px; /* Equivalent to px-6 py-2 */
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.15s ease;
-        }
-        .modal-close-btn:hover {
-            background-color: #102d4f;
         }
 /*end: css-gel*/
 
