@@ -37,7 +37,6 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin-left: -5px;
 }
 
 #solenename {
@@ -56,7 +55,7 @@ header {
 .solene-name-and-logo h1 {
     color: #C8B39B;
     margin: 0;
-    font-size 0.7em;
+    font-size 0.6em;
     text-align: left;
     white-space: nowrap;
 }
@@ -68,13 +67,13 @@ nav ul {
     display: flex;
     justify-content: flex-end;
     flex-wrap: nowrap;
-    gap: 15px;
+    gap: 25px;
 }
 
 nav a {
     display: block;
     padding: 8px 14px;
-    font-size: 1em;
+    font-size: 0.95em;
     text-decoration: none;
     cursor: pointer;
     color: #1D375B;
