@@ -73,7 +73,7 @@ header {
     gap: 25px;
 }
 
-.nav-button{
+.nav a{
     display: block;
     padding: 10px 16px;
     font-size: 0.95em;
@@ -88,7 +88,7 @@ header {
                         border-color 0.3s ease;
 }
 
-.nav-button:hover {
+.nav a:hover {
     background-color: transparent;
     color: #C8B39B;
     border-color: #C8B39B;
