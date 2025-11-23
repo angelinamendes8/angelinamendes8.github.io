@@ -106,6 +106,63 @@ nav a:hover {
     margin-top: 0;
 }
 
+/* Container for all page content - based on .page-content */
+.page-content {
+    /* Assuming this class is used to structure the page layout */
+}
+
+/* Styles for the main hero section - based on the original div's classes */
+.home-hero {
+    text-align: center; /* text-center */
+    padding-top: 2.5rem; /* py-10 (assuming 10 units = 2.5rem in your framework's scale) */
+    padding-bottom: 2.5rem; /* py-10 */
+    background-color: white; /* bg-white */
+    border-radius: 0.75rem; /* rounded-xl (assuming 0.75rem for xl) */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    margin-bottom: 2rem; /* mb-8 (assuming 8 units = 2rem) */
+}
+
+/* Styles for the content wrapper inside the hero */
+.hero-content {
+    /* No direct styles from the original snippet, used for organization */
+}
+
+/* Styles for the main heading */
+.hero-title {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+/* Styles for the description paragraph */
+.hero-description {
+    font-size: 1.125rem; /* text-lg */
+    color: #4b5563; /* text-gray-600 */
+    max-width: 42rem; /* max-w-xl (assuming xl width) */
+    margin-left: auto; /* mx-auto */
+    margin-right: auto; /* mx-auto */
+}
+
+/* Styles for the button container */
+.hero-action {
+    margin-top: 2rem; /* mt-8 */
+}
+
+/* Styles for the primary button */
+.btn-primary {
+    display: inline-block; /* inline-block */
+    padding: 0.75rem 2rem; /* px-8 (adjust padding to match the original width) */
+    /* width: auto; /* w-auto */
+    
+    /* --- Example custom button styles below (replace with your actual design) --- */
+    background-color: #3b82f6; /* Example: Blue */
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
 
 .gallery {
@@ -179,43 +236,43 @@ button:hover {
 }
 
         
-        .contact-form-container {
-            max-width: 600px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background-color: white;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
+.contact-form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
         
-        .contact-form-container label {
-            display: block;
-            text-align: left;
-            margin-bottom: 0.25rem;
-            font-weight: 600;
-        }
+.contact-form-container label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
         
-        /* About Section Person Details */
-        .people {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
+/* About Section Person Details */
+.people {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
         
-        .people > div {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
+.people > div {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
         
-        .people ul {
-            list-style: disc;
-            padding-left: 20px;
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
-        }
+.people ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
 
 footer {
     background-color: #5D768B;
