@@ -140,36 +140,41 @@ nav a:hover {
 }
 
 
-        .art-title {
-            font-family: Georgia, serif;
+        body {
+            font-family: "Inter", sans-serif;
         }
 
-        /* --- Carousel Scroll Behavior CSS (Not Tailwind) --- */
+        /* --- Custom CSS for Carousel Logic (Non-Tailwind properties) --- */
         
-        /* Custom styles for hidden scrollbar */
-        .carousel-scroll-container::-webkit-scrollbar {
-            display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+        /* Apply scroll snapping behavior to the container */
+        .art-list-container {
+            scroll-snap-type: x mandatory; /* Makes it snap to cards */
+            -webkit-overflow-scrolling: touch; /* Improves smooth scrolling on mobile */
+            gap: 1.5rem; /* Equivalent to Tailwind's gap-6 */
         }
 
-        .carousel-scroll-container {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
-            scroll-snap-type: x mandatory;
+        /* Hide the scrollbar for aesthetics, while keeping functionality */
+        .art-list-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+        .art-list-container {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
         }
 
-        .carousel-item {
-            /* Set card width and ensure it snaps to the start of the scroll view */
-            flex-shrink: 0;
-            width: 20rem; /* w-80 */
-            scroll-snap-align: start;
+        /* 2. Style for each individual art-box to define its width and behavior */
+        .art-box {
+            width: 18rem; /* Fixed width for card (adjust as needed) */
+            scroll-snap-align: start; /* Snap to the start of each card */
         }
-
-        /* Make cards slightly wider on small screens to match sm:w-96 */
+        
+        /* Responsive width adjustment for larger screens */
         @media (min-width: 640px) {
-            .carousel-item {
-                width: 24rem; /* sm:w-96 */
+            .art-box {
+                width: 22rem; /* Wider on desktop/tablet */
             }
         }
+        
 /*end: css-gel*/
 
 .gallery {
