@@ -95,9 +95,6 @@ nav a:hover {
 }
 
 /*start: css-gel*/
-.page-content {
-
-}
 
 .home-hero {
     text-align: center; 
@@ -107,10 +104,6 @@ nav a:hover {
     margin-bottom: 2rem; 
     font-family: 'Playfair Display', serif;
 }
-
-.hero-content {
-}
-
 
 .hero-title {
     font-size: 2rem;
@@ -166,7 +159,7 @@ nav a:hover {
 
         .carousel-item {
             /* Set card width and ensure it snaps to the start of the scroll view */
-            flex-shrink-0;
+            flex-shrink: 0;
             width: 20rem; /* w-80 */
             scroll-snap-align: start;
         }
