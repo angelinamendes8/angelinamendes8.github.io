@@ -14,7 +14,7 @@ header {
     justify-content: space-between;
     font-family: 'Playfair Display', serif;
     font-weight: 500;
-    color: #e3c9a4;
+    color: #C8B39B;
     height: 30vh;
     padding: 0 5%;
     width: 100%;
@@ -56,9 +56,9 @@ header {
 }
 
 .solene-name-and-logo h2 {
-    color: #e3c9a4;
+    color: #C8B39B;
     margin: 0;
-    font-size: 0.45em;
+    font-size: 0.7em;
     text-align: left;
     white-space: normal;
 }
@@ -80,9 +80,9 @@ nav a {
     text-decoration: none;
     cursor: pointer;
     color: #1D375B;
-    background-color: #e3c9a4;
+    background-color: #C8B39B;
     border-radius: 12px;
-    border: 2px solid #e3c9a4;
+    border: 2px solid #C8B39B;
     transition: background-color 0.3s ease, 
                         color 0.3s ease, 
                         border-color 0.3s ease;
@@ -90,8 +90,8 @@ nav a {
 
 nav a:hover {
     background-color: transparent;
-    color: #e3c9a4;
-    border-color: #e3c9a4;
+    color: #C8B39B;
+    border-color: #C8B39B;
 }
 
 .content {
