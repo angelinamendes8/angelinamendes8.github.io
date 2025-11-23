@@ -339,7 +339,7 @@ nav a:hover {
     background-color: #1D375B;
     color: #C8B39B;
     font-weight: 500;
-    padding: 0.5rem rem;
+    padding: 0.3rem 0.5rem;
     border-radius: 0.5rem; 
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     transition: background-color 0.15s ease-in-out, transform 0.15s ease-in-out;
@@ -511,7 +511,7 @@ button:hover {
     font-weight: 600;
 }
         
-/* About Section Person Details */
+
 .people {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
