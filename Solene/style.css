@@ -148,37 +148,42 @@ nav a:hover {
         .carousel-container {
             position: relative;
             margin-top: 20px;
+            /* Ensure the container hides overflow and defines the visible area */
+            overflow: hidden; 
         }
 
         .art-list {
             /* Key styles for horizontal scrolling carousel */
             display: flex;
+            flex-wrap: nowrap; /* **CRITICAL FIX: Prevents wrapping** */
             overflow-x: scroll; /* Allows horizontal scrolling */
             scroll-behavior: smooth; /* Smooth scrolling effect */
-            -webkit-overflow-scrolling: touch; /* Improves scrolling on iOS */
+            -webkit-overflow-scrolling: touch; 
             gap: 20px; /* Space between paintings */
             padding: 10px 0;
-            cursor: grab; /* Indicates it can be dragged */
+            cursor: grab;
+            
             /* Hide the scrollbar for a cleaner look */
-            scrollbar-width: none;  /* Firefox */
-            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
 
         .art-list::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
+            display: none;
         }
 
         .art-box {
             /* Fixed width for each painting box */
             flex-shrink: 0; /* Prevents items from shrinking */
-            width: 300px; 
+            width: 300px; /* Set a specific width */
             padding: 15px;
             border: 1px solid #ccc;
             border-radius: 8px;
             background-color: #fff;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Adjust based on your original design */
         }
-
+        
         .art-box h4 {
             margin-top: 0;
             color: #007bff;
@@ -219,7 +224,6 @@ nav a:hover {
             right: 0;
             border-radius: 5px 0 0 5px;
         }
-
 /*end: css-gel*/
 
 .gallery {
