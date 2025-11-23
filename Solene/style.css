@@ -21,16 +21,7 @@ header {
 }
 
 .header-space {
-    flex-grow: 1;
-}
-
-header h1 {
-   color: #C8B39B;
-   text-align: center;
-   margin: 5px 15px 5px 15px;
-   text-align: center;
-   font-size: 1.2em;
-   max-width: 90%;
+    flex-grow: 1; min-width: 50px;
 }
 
 .solene-name-and-logo {
@@ -40,15 +31,14 @@ header h1 {
     gap: 10px
 }
 
-
-#solenelogo {
-    width: 150px;
+#solenename {
+    width: 80px;
     height: auto;
     display: block;
 }
 
-#solenename {
-    width: 60px;
+#solenelogo {
+    width: 80px;
     height: auto;
     display: block;
 }
