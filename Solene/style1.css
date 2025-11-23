@@ -139,21 +139,19 @@ nav a:hover {
     transition: background-color 0.3s;
 }
 
-/*carousel - gel*/
-  /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background-color: #8b5cf6; /* Indigo */
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #e5e7eb;
-        }
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #1D375B;
+    border-radius: px;
+}
+::-webkit-scrollbar-track {
+    background: #e5e7eb;
+}
 
-        /* --- LAYOUT & SECTION STYLES --- */
+/* --- LAYOUT & SECTION STYLES --- */
         .gallery-section {
             max-width: 1400px;
             margin: 0 auto;
@@ -370,9 +368,6 @@ nav a:hover {
             }
         }
 /*end: css-gel*/
-
-
-
 
 .form-box,
 .contact {
