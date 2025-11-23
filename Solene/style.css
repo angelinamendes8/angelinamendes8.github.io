@@ -146,6 +146,44 @@ nav a:hover {
 }
 
 
+        /* Set the default font to Inter, as required */
+        body {
+            font-family: "Inter", sans-serif;
+        }
+
+        /* Define a custom font family for the main heading */
+        .art-title {
+            font-family: Georgia, serif;
+        }
+
+        /* --- Carousel Scroll Behavior CSS (Not Tailwind) --- */
+        
+        /* Custom styles for hidden scrollbar */
+        .carousel-scroll-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+        }
+
+        .carousel-scroll-container {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+            scroll-snap-type: x mandatory;
+        }
+
+        .carousel-item {
+            /* Set card width and ensure it snaps to the start of the scroll view */
+            flex-shrink-0;
+            width: 20rem; /* w-80 */
+            scroll-snap-align: start;
+        }
+
+        /* Make cards slightly wider on small screens to match sm:w-96 */
+        @media (min-width: 640px) {
+            .carousel-item {
+                width: 24rem; /* sm:w-96 */
+            }
+        }
+    
+
 .gallery {
     padding: 40px;
 }

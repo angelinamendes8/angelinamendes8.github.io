@@ -1,7 +1,6 @@
 function scrollCarousel(direction) {
             const container = document.getElementById('prints-carousel');
-            // Calculate the width of one item + its margin (4 items visible on large screens)
-            // On mobile, we scroll one item at a time (approx 80% of container width)
+            // Scroll by 80% of the container's width for a smooth, item-by-item feel
             const scrollAmount = container.clientWidth * 0.8; 
             
             if (direction === 'next') {
