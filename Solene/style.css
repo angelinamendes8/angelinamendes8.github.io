@@ -141,93 +141,89 @@ nav a:hover {
 
 /*carousel - gel*/
 .gallery {
-        padding: 20px;
-    }
+    padding: 20px;
+}
 
-    .carousel-container {
-        /* CRITICAL: Establishes a reference point for the absolute buttons */
-        position: relative;
-        margin-top: 20px;
-        /* Hides content that spills outside the view (the buttons will sit over this boundary) */
-        overflow: hidden; 
-        padding: 0 50px; /* Add space for the side buttons */
-    }
+.carousel-container {
+    /* CRITICAL: Establishes reference point for absolute buttons */
+    position: relative; 
+    margin-top: 20px;
+    /* Hides content that spills outside the view */
+    overflow: hidden; 
+    /* Padding to prevent the content from sliding underneath the buttons */
+    padding: 0 45px; 
+}
 
-    .art-list {
-        /* CRITICAL: Makes items line up horizontally */
-        display: flex;
-        /* CRITICAL: Prevents items from wrapping to a new line */
-        flex-wrap: nowrap; 
-        /* Enables the actual scrolling mechanism */
-        overflow-x: scroll; 
-        scroll-behavior: smooth; /* For smooth JS scrolling */
-        -webkit-overflow-scrolling: touch; 
-        gap: 20px; /* Space between paintings */
-        padding: 10px 0;
-        cursor: grab;
-        
-        /* Hide the scrollbar for a cleaner look */
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-    }
-
-    .art-list::-webkit-scrollbar {
-        display: none;
-    }
-
-    .art-box {
-        /* CRITICAL: Prevents items from shrinking and sets a uniform size */
-        flex-shrink: 0; 
-        width: 300px; 
-        padding: 15px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        background-color: #fff;
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-        min-height: 150px; /* Ensure boxes have some height */
-    }
+.art-list {
+    /* CRITICAL: Makes items line up horizontally */
+    display: flex;
+    /* CRITICAL: Prevents items from wrapping to a new line */
+    flex-wrap: nowrap; 
+    /* Enables the actual scrolling mechanism */
+    overflow-x: scroll; 
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; 
+    gap: 20px; /* Space between paintings */
+    padding: 10px 0;
+    cursor: grab;
     
-    .art-box h4 {
-        margin-top: 0;
-        color: #007bff;
-    }
+    /* Hide the scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
 
-    .art-box .price {
-        font-weight: bold;
-        color: #c0392b;
-    }
+.art-list::-webkit-scrollbar {
+    display: none;
+}
 
-    /* Carousel Navigation Buttons */
-    .carousel-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.7);
-        color: white;
-        border: none;
-        padding: 15px 10px;
-        cursor: pointer;
-        /* CRITICAL: Ensure buttons are on top of the content */
-        z-index: 20; 
-        font-size: 24px;
-        line-height: 1;
-        transition: background-color 0.3s;
-        user-select: none;
-    }
+.art-box {
+    /* CRITICAL: Prevents items from shrinking and sets a uniform size */
+    flex-shrink: 0; 
+    width: 300px; 
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    min-height: 150px; 
+}
 
-    .carousel-button:hover {
-        background-color: rgba(0, 0, 0, 0.9);
-    }
+/* ... (Existing .art-box text styles) ... */
+.art-box h4 { margin-top: 0; color: #007bff; }
+.art-box .price { font-weight: bold; color: #c0392b; }
 
-    #prev-btn {
-        left: 0; /* Positioned at the left edge of carousel-container */
-        border-radius: 0 5px 5px 0;
-    }
 
-    #next-btn {
-        right: 0; /* Positioned at the right edge of carousel-container */
-        border-radius: 5px 0 0 5px;
-    }
+/* Carousel Navigation Buttons */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    /* CRITICAL: Ensure buttons are on top of the content */
+    z-index: 20; 
+    font-size: 24px;
+    line-height: 1;
+    transition: background-color 0.3s;
+    user-select: none;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#prev-btn {
+    left: 0; 
+    border-radius: 0 5px 5px 0;
+}
+
+#next-btn {
+    right: 0; 
+    border-radius: 5px 0 0 5px;
+}
        
 /*end: css-gel*/
 
