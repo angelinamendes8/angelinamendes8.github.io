@@ -69,7 +69,7 @@ nav ul {
     margin: 0; 
     display: flex;
     justify-content: flex-end;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 25px;
 }
 
@@ -184,5 +184,12 @@ footer {
     color: white;
     text-align: center;
     padding: 15px;
-    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif; 
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
 }
