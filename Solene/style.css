@@ -14,7 +14,7 @@ header {
     justify-content: space-between;
     font-family: 'Playfair Display', serif;
     font-weight: 500;
-    color: #C8B39B;
+    color: #e3c9a4;
     height: 30vh;
     padding: 0 5%;
     width: 100%;
@@ -56,9 +56,9 @@ header {
 }
 
 .solene-name-and-logo h2 {
-    color: #C8B39B;
+    color: #e3c9a4;
     margin: 0;
-    font-size 0.45em;
+    font-size: 0.45em;
     text-align: left;
     white-space: normal;
 }
