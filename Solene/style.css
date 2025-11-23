@@ -14,7 +14,7 @@ header {
     justify-content: space-between;
     color: #C8B39B;
     height: 30vh;
-    padding: 0 4%;
+    padding: 0 5%;
     width: 100%;
     box-sizing: border-box;
     overflow: visible;
@@ -28,8 +28,8 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 60%;
     gap: 10px;
-    max-width: 60%;
 }
 
 .text-column {
@@ -37,6 +37,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    margin-left: -10px;
 }
 
 #solenename {
@@ -47,7 +48,7 @@ header {
 }
 
 #solenelogo {
-    width: 80px;
+    width: 200px;
     height: auto;
     display: block;
 }
