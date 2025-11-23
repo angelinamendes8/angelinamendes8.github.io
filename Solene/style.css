@@ -88,7 +88,7 @@ header {
                         border-color 0.3s ease;
 }
 
-nav li:hover {
+.header-button1:hover, ..header-button2:hover, .header-button3:hover, .header-button4:hover, .header-button5:hover, .header-button6:hover {
     background-color: transparent;
     color: #C8B39B;
     border-color: #C8B39B;
