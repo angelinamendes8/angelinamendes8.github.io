@@ -12,6 +12,7 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    font-family: Cormorant Garamond', serif;
     color: #C8B39B;
     height: 30vh;
     padding: 0 5%;
@@ -54,6 +55,8 @@ header {
 }
 
 .solene-name-and-logo h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
     color: ##C8B39B;
     margin: 0;
     font-size 0.45em;
