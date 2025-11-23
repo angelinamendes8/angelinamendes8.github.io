@@ -1,58 +1,74 @@
-document.addEventListener('DOMContentLoaded', () => {
-            const carouselContainer = document.getElementById('art-list');
-            const prevBtn = document.getElementById('prev-btn');
-            const nextBtn = document.getElementById('next-btn');
+// 1. Get the main elements
+    const artList = document.querySelector('.art-list');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    
+    // 2. Define the amount to scroll by (e.g., the width of one art-box plus the gap)
+    // We'll calculate this dynamically based on the first item's dimensions.
+    const artBox = document.querySelector('.art-box');
+    const scrollAmount = artBox ? artBox.offsetWidth + 20 : 320; // 300px width + 20px gap
 
-            if (!carouselContainer || !prevBtn || !nextBtn) return; 
+    /**
+     * Handles the scrolling functionality for the carousel.
+     * @param {string} direction - 'left' for previous, 'right' for next.
+     */
+    function scrollCarousel(direction) {
+        if (direction === 'left') {
+            // Scroll to the left by the calculated amount
+            artList.scrollLeft -= scrollAmount;
+        } else if (direction === 'right') {
+            // Scroll to the right by the calculated amount
+            artList.scrollLeft += scrollAmount;
+        }
+    }
 
-            // Function to handle the horizontal scrolling of the carousel
-            function scrollCarousel(direction) {
-                const firstArtBox = carouselContainer.querySelector('.art-box');
-                if (!firstArtBox) return; 
+    // 3. Attach event listeners to the buttons
+    prevBtn.addEventListener('click', () => {
+        scrollCarousel('left');
+    });
 
-                // Get the computed style for gap (1.5rem or 24px in the CSS)
-                const gapStyle = window.getComputedStyle(carouselContainer).gap;
-                // Parse the gap value (assuming it's in px for simplicity, or hardcode 24 if relying strictly on CSS above)
-                // We'll hardcode 24px (1.5rem) as per the CSS defined above.
-                const gap = 24; 
-                
-                // Calculate scroll amount: Card width + gap
-                const scrollAmount = firstArtBox.offsetWidth + gap; 
-                
-                if (direction === 'next') {
-                    // Smoothly scroll to the right
-                    carouselContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                } else if (direction === 'prev') {
-                    // Smoothly scroll to the left
-                    carouselContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                }
-                
-                // Update button state after a short delay for smooth scrolling animation
-                setTimeout(updateButtonState, 300);
-            }
+    nextBtn.addEventListener('click', () => {
+        scrollCarousel('right');
+    });
 
-            // Function to update the disabled state of the buttons
-            function updateButtonState() {
-                const scrollLeft = carouselContainer.scrollLeft;
-                const clientWidth = carouselContainer.clientWidth;
-                const scrollWidth = carouselContainer.scrollWidth;
+    // Optional: Add drag functionality (for better user experience, like a touch device)
+    let isDown = false;
+    let startX;
+    let scrollLeft;
 
-                // Disable previous button if scrolled to the far left (with a 1px tolerance)
-                prevBtn.disabled = scrollLeft <= 1; 
+    artList.addEventListener('mousedown', (e) => {
+        isDown = true;
+        artList.classList.add('active');
+        startX = e.pageX - artList.offsetLeft;
+        scrollLeft = artList.scrollLeft;
+    });
 
-                // Disable next button if scrolled to the far right (with a 1px tolerance)
-                const isScrolledEnd = (scrollLeft + clientWidth) >= (scrollWidth - 1); 
-                nextBtn.disabled = isScrolledEnd;
-            }
+    artList.addEventListener('mouseleave', () => {
+        isDown = false;
+        artList.classList.remove('active');
+    });
 
-            // Attach event listeners
-            prevBtn.addEventListener('click', () => scrollCarousel('prev'));
-            nextBtn.addEventListener('click', () => scrollCarousel('next'));
+    artList.addEventListener('mouseup', () => {
+        isDown = false;
+        artList.classList.remove('active');
+    });
 
-            // Update button state on manual scroll and resize
-            carouselContainer.addEventListener('scroll', updateButtonState);
-            window.addEventListener('resize', updateButtonState);
+    artList.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - artList.offsetLeft;
+        const walk = (x - startX) * 1.5; // Scroll faster
+        artList.scrollLeft = scrollLeft - walk;
+    });
 
-            // Initialize button state on load
-            updateButtonState();
-        });
+    // Handle touch events for mobile devices
+    artList.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].pageX - artList.offsetLeft;
+        scrollLeft = artList.scrollLeft;
+    }, { passive: true }); // passive: true for better scrolling performance
+
+    artList.addEventListener('touchmove', (e) => {
+        const x = e.touches[0].pageX - artList.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        artList.scrollLeft = scrollLeft - walk;
+    }, { passive: false }); // passive: false to allow e.preventDefault() if needed, though scroll behavior handles it
