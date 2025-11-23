@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solène Art Gallery</title>
-    <!-- css -->
     <link rel="stylesheet" href="style.css">
-    <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
@@ -18,8 +16,8 @@
         <img src="solenelogo.png" id="solenelogo">
         
         <div class="text-column">
-        <img src="solenename.png" id="solenename">
-        <h1>An art gallery with art has its own tale</h1>
+        <span class="solene-title">Solène</span>
+        <span>An art gallery with art has its own tale</span>
        </div>
     
     </div>
@@ -45,17 +43,44 @@
             <h2 class="hero-title">Welcome to Solène's Art Gallery Website</h2>
             <p class="hero-description">Browse through our collection of classical and modern artworks from different artists.</p>
             <div class="hero-action">
-                <button onclick="showPage('gallery')" class="btn-primary">View Full Art Gallery</button>
-            </div>
+                <a href="gallery.html" class="btn-primary">View Full Art Gallery</a> </div>
         </div>
     </div>
+
+    <div class="artwork-carousel-section">
+        <h2 class="artwork-carousel-title">Featured Artworks</h2>
+        <div class="artwork-carousel">
+            <div class="carousel-item">
+                <img src="placeholder-art-1.jpg" alt="Art Piece 1">
+                <p>The Starry Night</p>
+            </div>
+            <div class="carousel-item">
+                <img src="placeholder-art-2.jpg" alt="Art Piece 2">
+                <p>Impression, Sunrise</p>
+            </div>
+            <div class="carousel-item">
+                <img src="placeholder-art-3.jpg" alt="Art Piece 3">
+                <p>Whistler's Mother</p>
+            </div>
+            <div class="carousel-item">
+                <img src="placeholder-art-4.jpg" alt="Art Piece 4">
+                <p>The Kiss</p>
+            </div>
+            <div class="carousel-item">
+                <img src="placeholder-art-5.jpg" alt="Art Piece 5">
+                <p>Water Lilies</p>
+            </div>
+            <div class="carousel-item">
+                <img src="placeholder-art-6.jpg" alt="Art Piece 6">
+                <p>American Gothic</p>
+            </div>
+            </div>
+    </div>
 </section>
-
+    
 <footer>
-    <p>© 2025 Solène Art Gallery</p>
+    <p>&copy; 2024 Solène Art Gallery. All rights reserved.</p>
 </footer>
-
-<script src="solene.js"></script>
 
 </body>
 </html>
