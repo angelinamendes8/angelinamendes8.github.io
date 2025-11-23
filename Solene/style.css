@@ -12,7 +12,7 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    color: #F8EFE5;
+    color: #C8B39B;
     height: 30vh;
     padding: 0 5%;
     width: 100%;
@@ -54,7 +54,7 @@ header {
 }
 
 .solene-name-and-logo h2 {
-    color: #F8EFE5;
+    color: ##C8B39B;
     margin: 0;
     font-size 0.45em;
     text-align: left;
