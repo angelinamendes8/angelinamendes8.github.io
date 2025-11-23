@@ -4,21 +4,14 @@
     const nextBtn = document.getElementById('next-btn');
     
     // 2. Define the amount to scroll by (e.g., the width of one art-box plus the gap)
-    // We'll calculate this dynamically based on the first item's dimensions.
     const artBox = document.querySelector('.art-box');
-    const scrollAmount = artBox ? artBox.offsetWidth + 20 : 320; // 300px width + 20px gap
+    const SCROLL_STEP = artBox ? artBox.offsetWidth + 20 : 320; 
 
-    /**
-     * Handles the scrolling functionality for the carousel.
-     * @param {string} direction - 'left' for previous, 'right' for next.
-     */
     function scrollCarousel(direction) {
         if (direction === 'left') {
-            // Scroll to the left by the calculated amount
-            artList.scrollLeft -= scrollAmount;
+            artList.scrollLeft -= SCROLL_STEP;
         } else if (direction === 'right') {
-            // Scroll to the right by the calculated amount
-            artList.scrollLeft += scrollAmount;
+            artList.scrollLeft += SCROLL_STEP;
         }
     }
 
@@ -31,7 +24,7 @@
         scrollCarousel('right');
     });
 
-    // Optional: Add drag functionality (for better user experience, like a touch device)
+    // Optional: Drag functionality (already correct)
     let isDown = false;
     let startX;
     let scrollLeft;
@@ -57,18 +50,17 @@
         if (!isDown) return;
         e.preventDefault();
         const x = e.pageX - artList.offsetLeft;
-        const walk = (x - startX) * 1.5; // Scroll faster
+        const walk = (x - startX) * 1.5;
         artList.scrollLeft = scrollLeft - walk;
     });
 
-    // Handle touch events for mobile devices
     artList.addEventListener('touchstart', (e) => {
         startX = e.touches[0].pageX - artList.offsetLeft;
         scrollLeft = artList.scrollLeft;
-    }, { passive: true }); // passive: true for better scrolling performance
+    }, { passive: true });
 
     artList.addEventListener('touchmove', (e) => {
         const x = e.touches[0].pageX - artList.offsetLeft;
         const walk = (x - startX) * 1.5;
         artList.scrollLeft = scrollLeft - walk;
-    }, { passive: false }); // passive: false to allow e.preventDefault() if needed, though scroll behavior handles it
+    }, { passive: false });
