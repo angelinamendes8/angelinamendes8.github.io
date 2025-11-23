@@ -63,7 +63,7 @@ header {
     white-space: normal;
 }
 
-.header-button {
+.nav ul {
     list-style: none;
     padding: 0;
     margin: 0; 
@@ -73,7 +73,7 @@ header {
     gap: 25px;
 }
 
-.header-button1, ..header-button2, .header-button3, .header-button4, .header-button5, .header-button6 {
+.nav-button{
     display: block;
     padding: 10px 16px;
     font-size: 0.95em;
@@ -88,7 +88,7 @@ header {
                         border-color 0.3s ease;
 }
 
-.header-button1:hover, ..header-button2:hover, .header-button3:hover, .header-button4:hover, .header-button5:hover, .header-button6:hover {
+.nav-button:hover {
     background-color: transparent;
     color: #C8B39B;
     border-color: #C8B39B;
