@@ -94,6 +94,7 @@ nav a:hover {
     border-color: #C8B39B;
 }
 
+/*start: css-gel*/
 .page-content {
 
 }
@@ -146,12 +147,6 @@ nav a:hover {
 }
 
 
-        /* Set the default font to Inter, as required */
-        body {
-            font-family: "Inter", sans-serif;
-        }
-
-        /* Define a custom font family for the main heading */
         .art-title {
             font-family: Georgia, serif;
         }
@@ -182,39 +177,7 @@ nav a:hover {
                 width: 24rem; /* sm:w-96 */
             }
         }
-    
-
-.gallery {
-    padding: 40px;
-}
-
-.gallery h2 {
-    text-align: center;
-}
-
-.art-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.art-box {
-    background-color: white;
-    border: 1px solid #F2D9C7;
-    padding: 15px;
-    border-radius: 8px;
-}
-
-.art-box h4 {
-    margin-top: 0;
-}
-
-.price {
-    color: #5D768B;
-    font-weight: bold;
-}
-
-
+/*end: css-gel*/
 
 .form-box,
 .contact {
