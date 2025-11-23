@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Playfair Display', serif;
     background-color: #F8EFE5;
     color: #000000;
 }
@@ -94,69 +94,50 @@ nav a:hover {
     border-color: #C8B39B;
 }
 
-.content {
-    background-color: #F2D9C7;
-    padding: 40px;
-    text-align: center;
-    height: 60vh;
-    width: 100
-}
-
-.content h2 {
-    margin-top: 0;
-}
-
-/* Container for all page content - based on .page-content */
 .page-content {
-    /* Assuming this class is used to structure the page layout */
+
 }
 
-/* Styles for the main hero section - based on the original div's classes */
 .home-hero {
-    text-align: center; /* text-center */
-    padding-top: 2.5rem; /* py-10 (assuming 10 units = 2.5rem in your framework's scale) */
-    padding-bottom: 2.5rem; /* py-10 */
-    background-color: white; /* bg-white */
-    border-radius: 0.75rem; /* rounded-xl (assuming 0.75rem for xl) */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
-    margin-bottom: 2rem; /* mb-8 (assuming 8 units = 2rem) */
+    text-align: center; 
+    padding-top: 2.5rem; 
+    padding-bottom: 2.5rem; 
+    background-color: #F2D9C7; 
+    margin-bottom: 2rem; 
+    font-family: 'Playfair Display', serif;
 }
 
-/* Styles for the content wrapper inside the hero */
 .hero-content {
-    /* No direct styles from the original snippet, used for organization */
 }
 
-/* Styles for the main heading */
+
 .hero-title {
-    font-size: 1.875rem; /* text-3xl */
-    font-weight: 700; /* font-bold */
-    margin-bottom: 1rem; /* mb-4 */
+    font-size: 2rem;
+    font-weight: 700; 
+    margin-bottom: 1rem; 
+    font-family: 'Playfair Display', serif;
 }
 
-/* Styles for the description paragraph */
+
 .hero-description {
-    font-size: 1.125rem; /* text-lg */
-    color: #4b5563; /* text-gray-600 */
-    max-width: 42rem; /* max-w-xl (assuming xl width) */
-    margin-left: auto; /* mx-auto */
-    margin-right: auto; /* mx-auto */
+    font-size: 1.125rem;
+    color: #C8B39B; 
+    max-width: 42rem;
+    margin-right: auto; 
+    font-family: 'Playfair Display', serif;
 }
 
-/* Styles for the button container */
 .hero-action {
-    margin-top: 2rem; /* mt-8 */
+    margin-top: 2rem;
 }
 
-/* Styles for the primary button */
+
 .btn-primary {
-    display: inline-block; /* inline-block */
-    padding: 0.75rem 2rem; /* px-8 (adjust padding to match the original width) */
-    /* width: auto; /* w-auto */
-    
-    /* --- Example custom button styles below (replace with your actual design) --- */
-    background-color: #3b82f6; /* Example: Blue */
-    color: white;
+    display: inline-block; 
+    padding: 0.75rem 2rem; 
+    font-family: 'Playfair Display', serif;
+    background-color: #F8EFE5;
+    color: #1D375B;
     font-weight: 600;
     border: none;
     border-radius: 0.5rem;
@@ -275,8 +256,8 @@ button:hover {
 }
 
 footer {
-    background-color: #5D768B;
-    color: white;
+    background-color: #1D375B;
+    color: #C8B39B;
     text-align: center;
     padding: 15px;
     width: 100%;
