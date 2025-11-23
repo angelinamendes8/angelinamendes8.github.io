@@ -51,13 +51,13 @@ header {
 }
 
 #solenelogo {
-    width: 90px; /* 1. Slightly larger logo */
-    height: 90px; /* 1. Slightly larger logo */
+    width: 150px; 
+    height: 150px; 
     display: block;
 }
 
 .solene-name-and-logo .solene-title {
-    font-size: 2.8em; /* 1. Increased title size */
+    font-size: 2.8em; 
     font-weight: 600;
     color: #C8B39B;
     margin: 0;
@@ -67,7 +67,7 @@ header {
 .solene-name-and-logo span:not(.solene-title) {
     color: #C8B39B;
     margin: 0;
-    font-size: 1.1em; /* 1. Increased description size */
+    font-size: 2em;
     text-align: left;
     white-space: normal;
     line-height: 1.2;
@@ -104,7 +104,6 @@ nav a:hover {
     border-color: #C8B39B;
 }
 
-/* Home Hero Section (2. Layout and Contrast Fix) */
 
 .home-hero {
     text-align: center; 
@@ -126,20 +125,20 @@ nav a:hover {
     font-weight: 700; 
     margin-bottom: 1rem; 
     font-family: 'Playfair Display', serif;
-    color: #1D375B; /* 2. High Contrast Blue */
-    text-align: center; /* 2. Consistent Alignment */
+    color: #1D375B;
+    text-align: center;
 }
 
 
 .hero-description {
     font-size: 1.25rem; 
-    color: #5D768B; /* 2. High Contrast Blue */
+    color: #5D768B;
     max-width: 90%; 
     margin-right: auto; 
     margin-left: auto; 
     font-family: 'Playfair Display', serif;
     line-height: 1.6; 
-    text-align: center; /* 2. Consistent Alignment */
+    text-align: center;
 }
 
 .hero-action {
@@ -167,20 +166,18 @@ nav a:hover {
 }
 
 
-/* Home Page Artwork Carousel (4. Styling to match Gallery Cards) */
-
 .artwork-carousel-section {
     text-align: center;
     padding: 3rem 1rem;
-    max-width: 1400px; /* Wider to match gallery-section */
+    max-width: 1400px;
     margin: 0 auto;
     background-color: #F8EFE5;
 }
 
 .artwork-carousel-title {
-    font-size: 2.25rem; /* Match Gallery Heading Size */
+    font-size: 2.25rem;
     font-weight: 800;
-    margin-bottom: 3rem; /* Match Gallery Heading Margin */
+    margin-bottom: 3rem;
     color: #5D768B;
 }
 
@@ -194,45 +191,44 @@ nav a:hover {
 }
 
 .carousel-item {
-    flex: 0 0 280px; /* Adjusted width to match minmax in gallery-section */
+    flex: 0 0 280px;
     scroll-snap-align: start;
     overflow: hidden;
-    border-radius: 0.75rem; /* Match Gallery Card rounded-xl */
-    box-shadow: 0 4px 12px rgba(93, 118, 139, 0.05); /* Match Gallery Card shadow */
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(93, 118, 139, 0.05); 
     transition: transform 0.3s;
-    background-color: #F8EFE5; /* Match Gallery Card background */
-    border: 1px solid #E3C9A4; /* Match Gallery Card border */
+    background-color: #F8EFE5;
+    border: 1px solid #E3C9A4; 
     cursor: pointer;
 }
 
 .carousel-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(93, 118, 139, 0.1); /* Match Gallery Card hover shadow */
+    box-shadow: 0 8px 20px rgba(93, 118, 139, 0.1);
 }
 
 .carousel-item img {
     width: 100%;
-    height: 12rem; /* Match Gallery Card fixed height */
+    height: 12rem;
     object-fit: cover;
     display: block;
     cursor: pointer;
 }
 
 .carousel-item p {
-    padding: 1.25rem; /* Match Gallery Card content padding */
+    padding: 1.25rem; 
     margin: 0;
     font-weight: 600;
     color: #1D375B;
-    font-size: 1.25rem; /* Match Gallery Card h4 size */
+    font-size: 1.25rem; 
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    text-align: left; /* Default alignment */
-    border-top: 1px solid #E3C9A4; /* Add a separator line */
+    text-align: left;
+    border-top: 1px solid #E3C9A4;
 }
 
 
-/* Scrollbar style for carousel (retained) */
 .artwork-carousel::-webkit-scrollbar {
     height: 8px;
 }
@@ -244,15 +240,6 @@ nav a:hover {
     background: #f0f0f0;
 }
 
-
-/* End Home Page Carousel */
-
-
-/* Gallery Artwork Styles (retained) */
-/* ... (Custom scrollbar, gallery-section, artworks-grid, artwork-card, card-content, enquire-btn styles are all retained or updated slightly for consistency) ... */
-
-
-/* Footer Fix (retained) */
 
 footer {
     background-color: #1D375B;
