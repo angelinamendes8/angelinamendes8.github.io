@@ -140,22 +140,32 @@ nav a:hover {
 }
 
 /*carousel - gel*/
-::-webkit-scrollbar {
+  /* Custom scrollbar */
+        ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
         }
         ::-webkit-scrollbar-thumb {
-            background-color: #8b5cf6; /* Purple/Violet */
+            background-color: #8b5cf6; /* Indigo */
             border-radius: 4px;
         }
         ::-webkit-scrollbar-track {
             background: #e5e7eb;
         }
 
+        /* --- LAYOUT & SECTION STYLES --- */
         .gallery-section {
             max-width: 1400px;
             margin: 0 auto;
             padding: 2rem 1rem;
+        }
+
+        .heading {
+            font-size: 2.25rem; /* 4xl equivalent */
+            font-weight: 800; /* extabold equivalent */
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1f2937;
         }
 
         .artworks-grid {
@@ -164,11 +174,16 @@ nav a:hover {
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
-        
+
+        /* --- ARTWORK CARD STYLES --- */
         .artwork-card {
+            background-color: white;
+            border-radius: 0.75rem; /* rounded-xl equivalent */
+            overflow: hidden;
+            border: 1px solid #e5e7eb; /* border-gray-200 equivalent */
             transition: all 0.3s ease;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* shadow-md equivalent */
         }
 
         .artwork-card:hover {
@@ -176,7 +191,82 @@ nav a:hover {
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
-        /* Specific styles for the modal overlay and content */
+        .artwork-card img {
+            width: 100%;
+            height: 12rem; /* h-48 equivalent */
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 1.25rem; /* p-5 equivalent */
+        }
+
+        .card-content h4 {
+            font-size: 1.25rem; /* xl equivalent */
+            font-weight: 600; /* semibold equivalent */
+            color: #111827; /* gray-900 equivalent */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; /* truncate equivalent */
+        }
+
+        .card-content p.artist {
+            font-size: 0.875rem; /* sm equivalent */
+            color: #6b7280; /* gray-500 equivalent */
+            margin-top: 0.25rem;
+        }
+        
+        .card-content p.description {
+            font-size: 0.875rem; /* sm equivalent */
+            color: #374151; /* gray-700 equivalent */
+            margin-top: 0.5rem;
+            /* Simple line clamp simulation */
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 0.75rem; /* pt-3 equivalent */
+            border-top: 1px solid #f3f4f6; /* border-gray-100 equivalent */
+            margin-top: 0.75rem;
+        }
+
+        .card-footer .price {
+            font-size: 1.125rem; /* lg equivalent */
+            font-weight: 700; /* bold equivalent */
+            color: #4f46e5; /* indigo-600 equivalent */
+        }
+        
+        .card-footer .price.on-request {
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .enquire-btn {
+            background-color: #6366f1; /* indigo-500 equivalent */
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 1rem; /* py-2 px-4 equivalent */
+            border-radius: 0.5rem; /* rounded-lg equivalent */
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow-md equivalent */
+            transition: background-color 0.15s ease-in-out, transform 0.15s ease-in-out;
+            border: none;
+            cursor: pointer;
+        }
+
+        .enquire-btn:hover {
+            background-color: #4f46e5; /* indigo-600 equivalent */
+            transform: scale(1.05);
+        }
+
+        /* --- MODAL STYLES --- */
+
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -188,6 +278,96 @@ nav a:hover {
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 0.75rem; /* rounded-xl equivalent */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-2xl equivalent */
+            padding: 2rem; /* p-8 equivalent (or p-6 for small screens) */
+            width: 90%;
+            max-width: 24rem; /* max-w-sm equivalent */
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-header h3 {
+            font-size: 1.5rem; /* 2xl equivalent */
+            font-weight: 700; /* bold equivalent */
+            color: #111827;
+        }
+
+        .close-btn {
+            color: #9ca3af; /* gray-400 equivalent */
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: color 0.15s ease;
+        }
+        .close-btn:hover {
+            color: #4b5563; /* gray-600 equivalent */
+        }
+
+        .confirmation-icon {
+            font-size: 3rem; /* 5xl equivalent */
+            color: #10b981; /* green-500 equivalent */
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+        
+        .modal-text {
+            color: #374151; /* gray-700 equivalent */
+            font-size: 1.125rem; /* lg equivalent */
+            margin-bottom: 1rem;
+        }
+
+        #modal-artwork-title {
+            color: #4f46e5; /* indigo-600 equivalent */
+            display: block;
+            margin-top: 0.25rem;
+            font-weight: 700;
+        }
+
+        .modal-footer {
+            text-align: center;
+            padding-top: 0.75rem;
+            border-top: 1px solid #f3f4f6;
+            margin-top: 1rem;
+        }
+        .modal-footer p {
+            font-size: 0.75rem; /* xs equivalent */
+            color: #9ca3af; /* gray-400 equivalent */
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 640px) {
+            .heading {
+                font-size: 1.875rem; /* 3xl */
+            }
+            .modal-content {
+                padding: 1.5rem; /* p-6 equivalent */
+            }
         }
 /*end: css-gel*/
 
