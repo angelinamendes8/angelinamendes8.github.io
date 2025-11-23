@@ -178,9 +178,6 @@ button:hover {
     background-color: #C8B39B;
 }
 
-.hidden {
-            display: none !important;
-        }
         
         .contact-form-container {
             max-width: 600px;
