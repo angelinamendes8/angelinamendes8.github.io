@@ -139,25 +139,8 @@ nav a:hover {
     transition: background-color 0.3s;
 }
 
-/*carousel - gel*/
-  /* Custom scrollbar */
-           .auth-buttons a {
-            border: 1px solid var(--color-accent-gold);
-            background-color: var(--color-accent-gold);
-            color: var(--color-primary-dark);
-            font-weight: 600;
-        }
-
-        .auth-buttons a:last-child {
-            background-color: transparent;
-            color: var(--color-accent-gold);
-        }
-
-        .auth-buttons a:hover {
-            opacity: 0.9;
-        }
-        
-        /* Main Content */
+/*end: css-gel*/
+/* Main Content */
         .artworks-section {
             padding: 40px 5%;
             text-align: center;
@@ -367,7 +350,10 @@ nav a:hover {
                 grid-template-columns: 1fr;
             }
         }
+
 /*end: css-gel*/
+
+
 
 
 .form-box,
