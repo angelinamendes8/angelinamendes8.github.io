@@ -30,40 +30,166 @@
     </nav>
 </header>
 
-<section class="gallery">
-    
-    <h2>Artworks</h2>
+<section class="gallery-section">
+        <h1>Our Artworks Collection</h1>
 
-    <div class="carousel-container"> 
-        
-        <button id="prev-btn" class="carousel-button">❮</button>
-        <button id="next-btn" class="carousel-button">❯</button>
-
-        <div class="art-list">
-
-            <div class="art-box">
-                <h4>Apollo Disguised As a Shepherd</h4>
-                <p>Artist: Jean Valentin de Boulogne</p>
-                <p class="desc">Apollo, punished by Jupiter, served as a shepherd under King Admetus.</p>
-                <p class="price">$13,330</p>
+        <!-- Artwork Grid -->
+        <div id="artworks-grid" class="artworks-grid">
+            
+            <!-- Art Card Template 1 -->
+            <div class="artwork-card" data-title="Apollo Disguised As a Shepherd">
+                <img src="https://placehold.co/600x400/C8B39B/1D375B?text=Artwork+Placeholder" 
+                     alt="Apollo Disguised As a Shepherd" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/C8B39B/1D375B?text=Loading+Error'">
+                <div class="card-content">
+                    <div>
+                        <h4>Apollo Disguised As a Shepherd</h4>
+                        <p class="artist">Artist: Jean Valentin de Boulogne</p>
+                        <p class="description">Apollo, punished by Jupiter, served as a shepherd under King Admetus.</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="price">$13,330</p>
+                        <button onclick="handleEnquire(event, 'Apollo Disguised As a Shepherd')" class="enquire-btn">
+                            Enquire
+                        </button>
+                    </div>
+                </div>
             </div>
 
-            <div class="art-box">
-                <h4>Woman with a Parasol – Madame Monet and Her Son</h4>
-                <p>Artist: Claude Monet</p>
-                <p class="desc">Painted outdoors in one sitting, showing Camille and Jean Monet.</p>
-                <p class="price">$4,860</p>
+            <!-- Card 2 -->
+            <div class="artwork-card" data-title="Woman with a Parasol">
+                <img src="https://placehold.co/600x400/C8B39B/1D375B?text=Impressionist+Piece" 
+                     alt="Woman with a Parasol">
+                <div class="card-content">
+                    <div>
+                        <h4>Woman with a Parasol</h4>
+                        <p class="artist">Artist: Claude Monet</p>
+                        <p class="description">Painted outdoors in one sitting, showing Camille and Jean Monet.</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="price">$4,860</p>
+                        <button onclick="handleEnquire(event, 'Woman with a Parasol')" class="enquire-btn">
+                            Enquire
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="artwork-card" data-title="The Tower of Babel">
+                <img src="https://placehold.co/600x400/C8B39B/1D375B?text=Biblical+Scene" 
+                     alt="The Tower of Babel">
+                <div class="card-content">
+                    <div>
+                        <h4>The Tower of Babel</h4>
+                        <p class="artist">Artist: Pieter Bruegel the Elder</p>
+                        <p class="description">Based on the biblical story; tower design inspired by the Roman Colosseum.</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="price">$15,800</p>
+                        <button onclick="handleEnquire(event, 'The Tower of Babel')" class="enquire-btn">
+                            Enquire
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="artwork-card" data-title="The Concert">
+                <img src="https://placehold.co/600x400/C8B39B/1D375B?text=Courtly+Music" 
+                     alt="The Concert">
+                <div class="card-content">
+                    <div>
+                        <h4>The Concert</h4>
+                        <p class="artist">Artist: Gerrit van Honthorst</p>
+                        <p class="description">Courtly music scene symbolizing harmony in society through leadership.</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="price">$9,650</p>
+                        <button onclick="handleEnquire(event, 'The Concert')" class="enquire-btn">
+                            Enquire
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="artwork-card" data-title="The Dream">
+                <img src="https://placehold.co/600x400/C8B39B/1D375B?text=Cubism+Abstract" 
+                     alt="The Dream">
+                <div class="card-content">
+                    <div>
+                        <h4>The Dream</h4>
+                        <p class="artist">Artist: Pablo Picasso</p>
+                        <p class="description">Known for its distortion and vibrant colors, depicting Marie-Thérèse Walter.</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="price">$1,000,000</p>
+                        <button onclick="handleEnquire(event, 'The Dream')" class="enquire-btn">
+                            Enquire
+                        </button>
+                    </div>
+                </div>
             </div>
             
-            <div class="art-box">
-                <h4>Venus with Cupid the Honey Thief</h4>
-                <p>Artist: Lucas Cranach the Elder</p>
-                <p class="desc">Humorous scene of Cupid stealing honey and getting stung by bees.</p>
-                <p class="price">$30,000,000</p>
+            <!-- Card 6 -->
+            <div class="artwork-card" data-title="Madonna of the Slums">
+                <img src="https://placehold.co/600x400/C8B39B/1D375B?text=Social+Realism" 
+                     alt="Madonna of the Slums">
+                <div class="card-content">
+                    <div>
+                        <h4>Madonna of the Slums</h4>
+                        <p class="artist">Artist: Vicente Manansala</p>
+                        <p class="description">Cubist portrayal of a mother and child in an urban poor setting.</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="price">$516,464</p>
+                        <button onclick="handleEnquire(event, 'Madonna of the Slums')" class="enquire-btn">
+                            Enquire
+                        </button>
+                    </div>
+                </div>
             </div>
 
-        </div> </div> 
-</section>
+            <!-- Card 7 -->
+            <div class="artwork-card" data-title="The Marriage of the Virgin">
+                <img src="https://placehold.co/600x400/C8B39B/1D375B?text=Renaissance+Masterpiece" 
+                     alt="The Marriage of the Virgin">
+                <div class="card-content">
+                    <div>
+                        <h4>The Marriage of the Virgin</h4>
+                        <p class="artist">Artist: Raphael</p>
+                        <p class="description">Depicts Mary and Joseph’s wedding with balanced composition.</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="price" style="color: #6b7280; font-weight: normal;">Price on Request</p>
+                        <button onclick="handleEnquire(event, 'The Marriage of the Virgin')" class="enquire-btn">
+                            Enquire
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="artwork-card" data-title="Ginevra de' Benci">
+                <img src="https://placehold.co/600x400/C8B39B/1D375B?text=Da+Vinci+Portrait" 
+                     alt="Ginevra de' Benci">
+                <div class="card-content">
+                    <div>
+                        <h4>Ginevra de' Benci</h4>
+                        <p class="artist">Artist: Leonardo da Vinci</p>
+                        <p class="description">Renaissance portrait known for realism and symbolic background.</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="price" style="color: #6b7280; font-weight: normal;">Price on Request</p>
+                        <button onclick="handleEnquire(event, 'Ginevra de\' Benci')" class="enquire-btn">
+                            Enquire
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </div>
+
 <script src="gallery.js"></script>
 </body>
 </html>
