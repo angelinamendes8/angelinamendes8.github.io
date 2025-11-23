@@ -4,47 +4,670 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solène Art Gallery</title>
-    <!-- css -->
-    <link rel="stylesheet" href="style.css">
-    <!-- google font -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- GLOBAL STYLES & LAYOUT --- */
+        
+        :root {
+            /* Custom Colors */
+            --ocean-deep-blue: #5D768B;
+            --warm-sandy-beige: #C8B39B;
+            --ivory-breeze: #F8EFE5;
+            --golden-driftwood: #E3C9A4;
+            --dark-blue-hover: #496172;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            min-height: 100vh; /* Replaces min-h-screen */
+            display: flex; /* Replaces flex */
+            flex-direction: column; /* Replaces flex-col */
+            margin: 0;
+            background-color: var(--ivory-breeze); /* Default body background */
+        }
+
+        .container {
+            max-width: 1280px; /* Replaces max-w-7xl */
+            margin: 0 auto; /* Replaces mx-auto */
+            padding: 0 1rem; /* Replaces px-4 sm:px-6 lg:px-8 */
+        }
+
+        .main-content {
+            flex: 1; /* Replaces flex-grow */
+            padding: 40px 0; /* Replaces py-10 */
+        }
+        
+        /* --- CUSTOM COLOR PALETTE DEFINITIONS (Retained) --- */
+        
+        .header-bg {
+            background-color: var(--ocean-deep-blue);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Replaces shadow-lg */
+        }
+        .main-content-bg {
+            background-color: var(--ivory-breeze); 
+        }
+        .featured-bg {
+            background-color: var(--warm-sandy-beige);
+            color: var(--ocean-deep-blue); 
+            padding: 2rem; /* Replaces p-8 */
+            border-radius: 0.75rem; /* Replaces rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* Replaces shadow-xl */
+            margin-bottom: 2.5rem; /* Replaces mb-10 */
+            text-align: center; /* Replaces text-center */
+        }
+        .footer-bg {
+            background-color: var(--ocean-deep-blue);
+            color: white;
+            text-align: center;
+            padding: 1rem 0; /* Replaces py-4 */
+            margin-top: auto; /* Ensures footer sticks to bottom */
+        }
+        
+        /* --- HEADER AND NAVIGATION STYLES --- */
+
+        .header-content {
+            display: flex; /* Replaces flex */
+            flex-direction: column; /* Default for mobile */
+            justify-content: space-between; /* Replaces md:justify-between */
+            align-items: center; /* Replaces md:items-center */
+            padding: 1rem 0;
+        }
+
+        .logo-tagline {
+            margin-bottom: 0.75rem; /* Replaces mb-3 */
+            text-align: center;
+        }
+        .logo-tagline h1 {
+            font-size: 1.875rem; /* Replaces text-3xl */
+            font-weight: bold;
+            color: white;
+            margin: 0;
+        }
+        .logo-tagline p {
+            font-size: 0.875rem; /* Replaces text-sm */
+            color: #ccc;
+            font-style: italic;
+            margin: 0;
+        }
+
+        .main-nav {
+            display: flex; /* Replaces flex */
+            gap: 1rem; /* Replaces space-x-4 */
+        }
+        .nav-button {
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem 0.75rem; /* Replaces p-2 */
+            border-radius: 0.5rem; /* Replaces rounded-lg */
+            transition: color 150ms;
+        }
+        .nav-button:hover {
+            color: var(--golden-driftwood); /* Replaces hover:text-[#E3C9A4] */
+        }
+
+        /* Responsive Breakpoint (similar to Tailwind's md) */
+        @media (min-width: 768px) {
+            .header-content {
+                flex-direction: row; /* Replaces md:flex-row */
+            }
+            .logo-tagline {
+                margin-bottom: 0; /* Replaces md:mb-0 */
+            }
+            .main-nav {
+                flex-wrap: nowrap;
+            }
+        }
+        
+        /* --- GALLERY GRID STYLES --- */
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1.5rem; /* Replaces gap-6/gap-8 */
+        }
+        @media (min-width: 640px) { /* sm breakpoint */
+            #home-gallery-preview {
+                grid-template-columns: repeat(2, 1fr); /* Replaces sm:grid-cols-2 */
+            }
+        }
+        @media (min-width: 1024px) { /* lg breakpoint */
+            #home-gallery-preview {
+                grid-template-columns: repeat(3, 1fr); /* Replaces lg:grid-cols-3 */
+            }
+            #full-gallery {
+                grid-template-columns: repeat(4, 1fr); /* Replaces lg:grid-cols-4 */
+            }
+        }
+
+        /* --- ARTWORK CARD STYLES --- */
+
+        .art-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Default shadow */
+            transition: all 300ms ease;
+            cursor: pointer;
+            overflow: hidden;
+            transform: scale(1); /* Base for transition */
+        }
+        .art-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15); /* Hover shadow */
+            transform: scale(1.02); /* Replaces hover:scale-[1.02] */
+        }
+        .art-card img {
+            width: 100%;
+            height: 14rem; /* Replaces h-56 */
+            object-fit: cover;
+        }
+        .art-card-info {
+            padding: 1rem; /* Replaces p-4 */
+        }
+        
+        /* --- BUTTON STYLES (Primary and Accent) --- */
+
+        .btn-primary {
+            background-color: var(--ocean-deep-blue);
+            color: white;
+            transition: background-color 0.2s;
+            padding: 0.75rem 1.5rem; /* Replaces px-6 py-3 */
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: var(--dark-blue-hover); /* Slightly darker blue for hover */
+        }
+
+        .btn-accent {
+            background-color: var(--golden-driftwood);
+            color: #1f2937; /* Dark text on light button */
+            font-weight: bold;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: background-color 0.3s;
+        }
+        .btn-accent:hover {
+            background-color: #d1b48b;
+        }
+        
+        /* --- FORM STYLES --- */
+
+        .contact-form-container {
+            background-color: white;
+            padding: 1.5rem; /* Replaces p-6 */
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            max-width: 512px; /* Replaces max-w-lg */
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 0.25rem;
+        }
+        .form-group input, .form-group textarea {
+            display: block;
+            width: 100%;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            padding: 0.5rem;
+            margin-top: 0.25rem;
+            box-sizing: border-box;
+        }
+
+        /* --- MODAL STYLES (Crucial for SPA transitions) --- */
+
+        .hidden {
+            display: none !important;
+        }
+
+        .page-content {
+            /* Basic padding/margin for page content */
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 50; 
+            /* Use grid for reliable centering (replaces Tailwind grid place-items-center) */
+            display: grid; 
+            place-items: center; 
+            opacity: 0; /* Default hidden state */
+            transition: opacity 0.3s ease; /* For smooth show/hide transitions */
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 2rem; /* Replaces p-8 */
+            border-radius: 0.75rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2); /* Replaces shadow-2xl */
+            max-width: 448px; /* Replaces max-w-md */
+            width: 90%;
+            margin: 0 1rem;
+            transition: transform 0.3s ease;
+            transform: scale(0.95); /* Start slightly scaled down */
+        }
+
+        /* Class added by JS to show the modal with transition */
+        .modal-overlay.opacity-100 {
+            opacity: 1;
+        }
+
+        .modal-overlay.opacity-100 .modal-content {
+            transform: scale(1); /* Scale up to normal size */
+        }
+
+        /* Detail Modal specific layout */
+        .detail-modal-content {
+            max-width: 768px; /* Replaces max-w-2xl */
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .detail-modal-content {
+                flex-direction: row; /* Replaces md:flex-row */
+            }
+        }
+        .detail-img-wrapper {
+            flex-shrink: 0;
+            margin-right: 1.5rem;
+        }
+        .detail-img-wrapper img {
+            width: 12rem; /* Replaces w-48 */
+            height: 12rem; /* Replaces h-48 */
+            object-fit: cover;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
 </head>
 <body>
 
-<header>
-    <div class="solene-name-and-logo">
-        <img src="solenelogo.png" id="solenelogo">
-        
-        <div class="text-column>">
-        <img src="solenename.png" id="solenename">
-        <h2>An art gallery with art has its own tale</h1>
-       </div>
-    
+    <header id="header-container" class="header-bg">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-tagline">
+                    <h1>Solène Art Gallery</h1>
+                    <p>An art gallery with art has its own tale</p>
+                </div>
+
+                <nav class="main-nav">
+                    <button onclick="showPage('home')" class="nav-button">Home</button>
+                    <button onclick="showPage('gallery')" class="nav-button">Artworks</button>
+                    <button onclick="showPage('about')" class="nav-button">About</button>
+                    <button onclick="showPage('contact')" class="nav-button">Contact</button>
+                    <button onclick="showModal('signupModal')" class="nav-button">Sign Up</button>
+                    <button onclick="showModal('loginModal')" class="nav-button">Log In</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-body" class="main-content-bg">
+        <div class="container main-content">
+
+            <section id="page-home" class="page-content">
+                <div class="featured-bg">
+                    <h2 style="font-size: 2.25rem; font-weight: 300; letter-spacing: 0.05em;">Featured Collection</h2>
+                </div>
+
+                <div style="padding: 2rem; text-align: center;">
+                    <h3 style="font-size: 1.875rem; font-weight: 500; color: #374151; margin-bottom: 1rem;">Welcome</h3>
+                    <p style="font-size: 1.25rem; color: #4b5563;">Browse through selected classical and modern artworks from different artists.</p>
+                </div>
+                
+                <h4 style="font-size: 1.5rem; font-weight: 600; margin-top: 3rem; margin-bottom: 1.5rem; border-bottom: 2px solid #9ca3af; padding-bottom: 0.5rem;">Latest Artworks</h4>
+                <div id="home-gallery-preview" class="gallery-grid">
+                    </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button onclick="showPage('gallery')" class="btn-primary">View Full Gallery</button>
+                </div>
+            </section>
+
+            <section id="page-gallery" class="page-content hidden">
+                <h2 style="font-size: 2.25rem; font-weight: bold; color: #374151; margin-bottom: 2rem;">The Full Collection</h2>
+                <div id="full-gallery" class="gallery-grid">
+                    </div>
+            </section>
+
+            <section id="page-about" class="page-content hidden">
+                <h2 style="font-size: 2.25rem; font-weight: bold; color: #374151; margin-bottom: 1.5rem;">About Solène Art Gallery</h2>
+                <div style="padding: 0 1rem; color: #4b5563; font-size: 1.125rem;">
+                    <p style="margin-bottom: 1rem;">Solène is a simple online art gallery created for showcasing various artworks with short story descriptions.</p>
+                    <p style="margin-bottom: 1rem;">We believe every artwork tells a story, and we are dedicated to curating collections that spark dialogue and inspire emotion. Our selections range from classical masterworks to cutting-edge contemporary pieces.</p>
+                    <p>We are a small, dedicated team of art lovers and professionals committed to providing an exceptional and seamless experience for both artists and buyers.</p>
+                </div>
+            </section>
+
+            <section id="page-contact" class="page-content hidden">
+                <h2 style="font-size: 2.25rem; font-weight: bold; color: #374151; margin-bottom: 1.5rem;">Contact Us</h2>
+                <div class="contact-form-container">
+                    <p style="margin-bottom: 1rem; font-size: 1.125rem;">We would love to hear from you! Reach out to us for inquiries about commissions, sales, or partnership opportunities.</p>
+                    <form onsubmit="event.preventDefault(); submitContactForm(this);" style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                    <p id="contact-message" class="hidden" style="margin-top: 1rem; text-align: center; color: green;">Thank you! Your message has been sent.</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer-bg">
+        <p style="font-size: 0.875rem;">&copy; 2025 Solène Art Gallery</p>
+    </footer>
+
+    <div id="welcomeModal" class="modal-overlay hidden">
+        <div class="modal-content" style="max-width: 400px; text-align: center;">
+            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: #374151;">Welcome to Solène Art Gallery</h3>
+            <p style="margin-bottom: 1.5rem; color: #4b5563;">Please choose how you would like to proceed.</p>
+            
+            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <button onclick="hideModal('welcomeModal'); showModal('loginModal');" class="btn-primary" style="background-color: var(--dark-blue-hover); width: 100%;">
+                    I Already Have an Account (Log In)
+                </button>
+                <button onclick="hideModal('welcomeModal'); showModal('signupModal');" class="btn-primary" style="width: 100%;">
+                    New User? (Sign Up)
+                </button>
+                <button onclick="hideModal('welcomeModal'); showPage('home');" style="background-color: #e5e7eb; color: #4b5563; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: background-color 0.2s;">
+                    Continue as Guest
+                </button>
+            </div>
+        </div>
     </div>
     
-    <div class="header-space"></div>
-   
-    <nav>
-        <ul>
-            <li><a href="indexsolene.html" class="active">Home</a></li>
-            <li><a href="gallery.html">Artworks</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="signup.html">Sign Up</a></li>
-            <li><a href="login.html">Log In</a></li>
-        </ul>
-    </nav>
-</header>
-    
-<!-- main body: shows the content of button selected -->
-<div class="main-content"></div>
+    <div id="signupModal" class="modal-overlay hidden">
+        <div class="modal-content" style="text-align: center;">
+            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem; color: #374151;">Create Account</h3>
+            <form onsubmit="event.preventDefault(); handleAuth('signup');" style="display: flex; flex-direction: column; gap: 1rem;">
+                <input type="email" id="signup-email" placeholder="Email" required style="padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.5rem;">
+                <input type="password" id="signup-password" placeholder="Password" required style="padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.5rem;">
+                <button type="submit" class="btn-primary" style="width: 100%;">Sign Up</button>
+            </form>
+            <button onclick="hideModal('signupModal'); showPage('home');" style="margin-top: 1rem; font-size: 0.875rem; color: #6b7280; background: none; border: none; cursor: pointer; width: 100%;">Continue as Guest (Close)</button>
+            <p id="signup-message" class="hidden" style="margin-top: 0.75rem; text-align: center; font-size: 0.875rem;"></p>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal-overlay hidden">
+        <div class="modal-content" style="text-align: center;">
+            <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem; color: #374151;">Log In</h3>
+            <form onsubmit="event.preventDefault(); handleAuth('login');" style="display: flex; flex-direction: column; gap: 1rem;">
+                <input type="email" id="login-email" placeholder="Email" required style="padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.5rem;">
+                <input type="password" id="login-password" placeholder="Password" required style="padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.5rem;">
+                <button type="submit" class="btn-primary" style="background-color: var(--dark-blue-hover); width: 100%;">Log In</button>
+            </form>
+            <button onclick="hideModal('loginModal'); showPage('home');" style="margin-top: 1rem; font-size: 0.875rem; color: #6b7280; background: none; border: none; cursor: pointer; width: 100%;">Continue as Guest (Close)</button>
+            <p id="login-message" class="hidden" style="margin-top: 0.75rem; text-align: center; font-size: 0.875rem;"></p>
+        </div>
+    </div>
+
+    <div id="artworkDetailModal" class="modal-overlay hidden">
+        <div id="artwork-detail-content" class="modal-content detail-modal-content" style="max-width: 800px;">
+            <div class="detail-img-wrapper">
+                <img id="detail-img" src="https://placehold.co/400x400/e6e2d3/000000?text=Artwork+Image" alt="Artwork Image">
+            </div>
+            <div style="flex-grow: 1;">
+                <h3 id="detail-title" style="font-size: 1.5rem; font-weight: bold; color: #374151; margin-bottom: 0.5rem;"></h3>
+                <p id="detail-artist" style="font-size: 1.125rem; color: #4b5563; margin-bottom: 1rem; font-style: italic;"></p>
+                <p id="detail-description" style="color: #374151; margin-bottom: 1rem;"></p>
+                <p id="detail-price" style="font-size: 1.25rem; font-weight: 600; color: var(--golden-driftwood); margin-bottom: 1.5rem;"></p>
+
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <button onclick="alertMessage('Purchase initiated for ' + document.getElementById('detail-title').innerText + '!')" class="btn-accent">
+                        Buy Artwork
+                    </button>
+                    <button onclick="hideModal('artworkDetailModal'); showPage('home');" style="color: #6b7280; background: none; border: none; cursor: pointer;">
+                        Close Details
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- DATA SETUP: Consolidated Artworks ---
+        const artworks = [
+            { id: 1, title: "Abstract Serenity", artist: "J. Doe", price: "$1,200", description: "A calming study in blue and beige.", imgUrl: "https://placehold.co/400x400/897863/FFFFFF?text=Serenity" },
+            { id: 2, title: "The City's Pulse", artist: "A. Smith", price: "$850", description: "Vibrant city lights captured in a dynamic composition.", imgUrl: "https://placehold.co/400x400/6c7a89/FFFFFF?text=City+Pulse" },
+            { id: 3, title: "Morning Mist", artist: "M. Chen", price: "$2,100", description: "A landscape painting evoking a foggy sunrise.", imgUrl: "https://placehold.co/400x400/e6e2d3/000000?text=Morning+Mist" },
+            { id: 4, title: "The Red Dress", artist: "R. Garcia", price: "$1,500", description: "A striking portrait focusing on color contrast.", imgUrl: "https://placehold.co/400x400/9e2a2b/FFFFFF?text=Red+Dress" },
+            { id: 5, title: "Geometric Flow", artist: "S. Lee", price: "$900", description: "Modern, minimalist composition.", imgUrl: "https://placehold.co/400x400/1e40af/FFFFFF?text=Geometric+Flow" },
+            { id: 6, title: "Sunset over Dune", artist: "D. King", price: "$1,800", description: "Warm colors depicting a desert sunset.", imgUrl: "https://placehold.co/400x400/f59e0b/000000?text=Desert+Sunset" },
+            { id: 7, title: "Apollo Disguised As a Shepherd", artist: "Jean Valentin de Boulogne", price: "$13,330", description: "Apollo, punished by Jupiter, served as a shepherd under King Admetus.", imgUrl: "https://placehold.co/400x400/404040/FFFFFF?text=Apollo+Shepherd" },
+            { id: 8, title: "Woman with a Parasol", artist: "Claude Monet", price: "$4,860", description: "Painted outdoors in one sitting, showing Camille and Jean Monet.", imgUrl: "https://placehold.co/400x400/7a93a8/FFFFFF?text=Monet+Parasol" },
+            { id: 9, title: "The Tower of Babel", artist: "Pieter Bruegel the Elder", price: "$15,800", description: "Based on the biblical story; tower design inspired by the Roman Colosseum.", imgUrl: "https://placehold.co/400x400/964B00/FFFFFF?text=Tower+of+Babel" },
+            { id: 10, title: "The Concert", artist: "Gerrit van Honthorst", price: "$9,650", description: "Courtly music scene symbolizing harmony in society through leadership.", imgUrl: "https://placehold.co/400x400/5D768B/FFFFFF?text=The+Concert" },
+            { id: 11, title: "Ophelia", artist: "John Everett Millais", price: "$14,200", description: "Tragic yet serene Pre-Raphaelite portrait of Ophelia floating in water.", imgUrl: "https://placehold.co/400x400/528392/FFFFFF?text=Ophelia" },
+            { id: 12, title: "Tres Marias", artist: "Anita Magsaysay-Ho", price: "$580,000", description: "Three Filipina women shown in unity and grace using soft modern style.", imgUrl: "https://placehold.co/400x400/C8B39B/000000?text=Tres+Marias" },
+        ];
+        
+        // --- CORE APPLICATION LOGIC (Page Switching) ---
+
+        /**
+         * Toggles the visibility of the main content sections.
+         * @param {string} pageId - The ID of the section to show (e.g., 'home', 'gallery').
+         */
+        function showPage(pageId) {
+            // Hide all content sections
+            document.querySelectorAll('.page-content').forEach(section => {
+                section.classList.add('hidden');
+            });
+            // Show the requested page
+            const page = document.getElementById(`page-${pageId}`);
+            if (page) {
+                page.classList.remove('hidden');
+            }
+            // Ensure all modals are closed
+            hideAllModals();
+        }
+
+        /**
+         * Generates the HTML card for an individual artwork.
+         */
+        function createArtworkCard(artwork) {
+            return `
+                <div onclick="showArtworkDetail(${artwork.id})" class="art-card">
+                    <img src="${artwork.imgUrl}" onerror="this.onerror=null; this.src='https://placehold.co/400x400/e6e2d3/000000?text=Image+Error'" 
+                          alt="${artwork.title}">
+                    <div class="art-card-info">
+                        <h5 style="font-size: 1.25rem; font-weight: 600; color: #374151; margin-bottom: 0.25rem;">${artwork.title}</h5>
+                        <p style="font-size: 0.875rem; color: #4b5563;">${artwork.artist}</p>
+                        <p style="font-size: 1rem; font-weight: bold; color: #1f2937; margin-top: 0.5rem;">${artwork.price}</p>
+                    </div>
+                </div>
+            `;
+        }
+        
+        /**
+         * Renders the artwork cards into the home and full gallery sections.
+         */
+        function renderArtworks() {
+            const homeGallery = document.getElementById('home-gallery-preview');
+            const fullGallery = document.getElementById('full-gallery');
+            
+            const homeHtml = artworks.slice(0, 6).map(createArtworkCard).join('');
+            homeGallery.innerHTML = homeHtml;
+            
+            const fullHtml = artworks.map(createArtworkCard).join('');
+            fullGallery.innerHTML = fullHtml;
+        }
+
+        // --- MODAL LOGIC ---
+
+        const TRANSITION_DURATION = 300; // Matches the CSS transition duration
+
+        /**
+         * Displays a modal (Login, Signup, or Artwork Detail).
+         */
+        function showModal(modalId) {
+            // Hide all pages (ensures only modal is visible)
+            document.querySelectorAll('.page-content').forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                
+                // Add class to trigger CSS transition
+                setTimeout(() => {
+                    modal.classList.add('opacity-100'); 
+                }, 10); 
+            }
+        }
+
+        /**
+         * Hides a specific modal.
+         */
+        function hideModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                // Remove opacity to start fade-out
+                modal.classList.remove('opacity-100');
+                
+                // Add 'hidden' class only after the transition completes
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, TRANSITION_DURATION); 
+            }
+        }
+        
+        /**
+         * Hides all modals.
+         */
+        function hideAllModals() {
+            document.querySelectorAll('.modal-overlay').forEach(modal => {
+                modal.classList.remove('opacity-100');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, TRANSITION_DURATION);
+            });
+        }
+
+        /**
+         * Handles the display of the Artwork Detail Modal.
+         */
+        function showArtworkDetail(id) {
+            const artwork = artworks.find(a => a.id === id);
+            if (!artwork) return;
+
+            document.getElementById('detail-img').src = artwork.imgUrl;
+            document.getElementById('detail-title').innerText = artwork.title;
+            document.getElementById('detail-artist').innerText = `Artist: ${artwork.artist}`;
+            document.getElementById('detail-description').innerText = artwork.description;
+            document.getElementById('detail-price').innerText = `Price: ${artwork.price}`;
+
+            showModal('artworkDetailModal');
+        }
+        
+        // --- FORM & AUTH MOCK LOGIC ---
+
+        function handleAuth(type) {
+            const modalId = `${type}Modal`;
+            const messageElement = document.getElementById(`${type}-message`);
+            const emailInput = document.getElementById(`${type}-email`);
+            const passwordInput = document.getElementById(`${type}-password`);
+
+            if (!emailInput.value || !passwordInput.value) {
+                messageElement.innerText = "Please enter both email and password.";
+                messageElement.style.color = 'red';
+                messageElement.classList.remove('hidden');
+                return;
+            }
+
+            messageElement.innerText = `${type === 'login' ? 'Welcome back' : 'Successfully signed up'}! Redirecting to Home...`;
+            messageElement.style.color = 'green';
+            messageElement.classList.remove('hidden');
+
+            setTimeout(() => {
+                hideModal(modalId);
+                showPage('home'); 
+                messageElement.classList.add('hidden'); 
+            }, 2000);
+        }
+
+        function submitContactForm(form) {
+            const messageEl = document.getElementById('contact-message');
+            
+            messageEl.classList.remove('hidden');
+            form.reset();
+            
+            setTimeout(() => {
+                messageEl.classList.add('hidden');
+                showPage('home');
+            }, 3000);
+        }
+
+        /**
+         * Custom alert replacement for Buy button.
+         */
+        function alertMessage(message) {
+            const body = document.body;
+            let notification = document.getElementById('app-notification');
+            if (!notification) {
+                notification = document.createElement('div');
+                notification.id = 'app-notification';
+                notification.style.cssText = `
+                    position: fixed; bottom: 20px; right: 20px; 
+                    background-color: #1f2937; color: white; 
+                    padding: 16px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                    transition: opacity 0.3s ease; opacity: 0; z-index: 100;
+                `;
+                body.appendChild(notification);
+            }
+            notification.innerText = message;
+            
+            notification.style.opacity = '1';
+
+            setTimeout(() => {
+                notification.style.opacity = '0';
+            }, 4000);
+        }
 
 
-<footer>
-    <p>© 2025 Solène Art Gallery</p>
-</footer>
-
+        // --- INITIALIZATION ---
+        window.onload = function() {
+            renderArtworks();
+            // Show the initial Welcome modal to start the user flow
+            showModal('welcomeModal'); 
+        };
+    </script>
 </body>
 </html>
