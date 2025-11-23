@@ -41,7 +41,7 @@ header {
 }
 
 #solenename {
-    width: 220px;
+    width: 250px;
     height: auto;
     display: block;
     margin-bottom: 2px;
@@ -56,7 +56,7 @@ header {
 .solene-name-and-logo h1 {
     color: #C8B39B;
     margin: 0;
-    font-size 0.6em;
+    font-size 0.45em;
     text-align: left;
     white-space: normal;
 }
