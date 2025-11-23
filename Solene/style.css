@@ -63,7 +63,7 @@ header {
     white-space: normal;
 }
 
-nav ul {
+.header-button {
     list-style: none;
     padding: 0;
     margin: 0; 
@@ -73,7 +73,7 @@ nav ul {
     gap: 25px;
 }
 
-nav li {
+.header-button1, ..header-button2, .header-button3, .header-button4, .header-button5, .header-button6 {
     display: block;
     padding: 10px 16px;
     font-size: 0.95em;
