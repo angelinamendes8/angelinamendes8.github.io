@@ -179,6 +179,37 @@ nav a:hover {
         }
 /*end: css-gel*/
 
+.gallery {
+    padding: 40px;
+}
+
+.gallery h2 {
+    text-align: center;
+}
+
+.art-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.art-box {
+    background-color: white;
+    border: 1px solid #F2D9C7;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.art-box h4 {
+    margin-top: 0;
+}
+
+.price {
+    color: #5D768B;
+    font-weight: bold;
+}
+
+
 .form-box,
 .contact {
     max-width: 400px;
